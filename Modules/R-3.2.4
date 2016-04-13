@@ -1,0 +1,18 @@
+#%Module1.0
+# R module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do R"
+}
+
+module-whatis "Configura o ambiente para a utilização do R"
+
+set topdir /opt/R
+set version 3.2.3
+set sys linux64
+
+prepend-path PATH $topdir/bin
+prepend-path LD_LIBRARY_PATH $topdir/lib64

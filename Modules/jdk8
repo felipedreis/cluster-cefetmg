@@ -1,0 +1,13 @@
+#%Module1.0
+# Java 8 module file
+#
+proc ModulesHelp { } {
+        global version modroot
+        puts stderr "Configura o ambiente para a utilização do JDK 8"
+}
+module-whatis   "Configura o ambiente para a utilização do JDK 8"
+set     topdir          /usr/java/jdk1.8.0_73
+set     version         1.8.0_74
+set     sys             linux64
+setenv		JAVA_HOME	$topdir
+prepend-path    PATH            $topdir/bin
