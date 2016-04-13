@@ -22,4 +22,4 @@ $BASE_DIR/AuxScripts/addPackExtend.sh $(ls octave-*.rpm)
 mv octave*.rpm $RPM_CONTRIB_DIR
 
 
-cp $BASE_DIR/octave /etc/modulefiles/
+cp $BASE_DIR/Modules/octave /etc/modulefiles/
