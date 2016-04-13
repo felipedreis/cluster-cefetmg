@@ -13,7 +13,7 @@ rm -f jdk-7u79-linux-x64.rpm
 
 rocks create package /opt/java java
 
-$BASE_DIRs/AuxScripts/addPackExtend.sh $(ls java-*)
+$BASE_DIR/AuxScripts/addPackExtend.sh $(ls java-*)
 
 mv java-* $RPM_CONTRIB_DIR
 

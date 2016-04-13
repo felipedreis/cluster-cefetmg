@@ -13,4 +13,13 @@ cd octave-4.0.1
 make
 make install
 
-cp $BASE_DIR/octave /etc/modulefiles
+cd ..
+rm octave-4.0.1.tar.gz
+rocks create package /opt/octave octave
+
+$BASE_DIR/AuxScripts/addPackExtend.sh $(ls octave-*.rpm)
+
+mv octave*.rpm $RPM_CONTRIB_DIR
+
+
+cp $BASE_DIR/octave /etc/modulefiles/
