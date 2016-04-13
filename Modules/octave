@@ -1,0 +1,18 @@
+#%Module1.0
+# Octave module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do Octave"
+}
+
+module-whatis "Configura o ambiente para a utilização do Octave"
+
+set topdir /opt/octave
+set version 4.0.1
+set sys linux64
+
+prepend-path PATH $topdir/bin
+prepend-path LD_LIBRARY_PATH $topdir/lib/octave/$version
