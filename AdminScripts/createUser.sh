@@ -36,6 +36,10 @@ if [ $# -eq 3 ];then
 	echo -e "Usuario: $1 \nSenha: $userkey" | mailx -s "Usuario_Cluster" $1
 
 	rocks sync users
+
+	sacctmgr add user $1 DefaultAccount=cluster
+	rocks sync config
+	scontrol reconfigure
 else
 	IFS=$'\n'
 	for line in $(cat $1);do
@@ -62,7 +66,12 @@ else
 		#cotas de BD
 
 		echo -e "Usuario: $1 \nSenha: $userkey" | mailx -s "Usuario_Cluster" $1
+
+		sacctmgr add user $1 DefaultAccount=cluster
 	done
 
 	rocks sync users
+
+	rocks sync config
+	scontrol reconfigure
 fi
