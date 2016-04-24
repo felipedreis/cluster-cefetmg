@@ -5,6 +5,7 @@
 # 18/06/2015
 # Autores:	Juan Lopes Ferreira, 
 #	    	Gilmar Pereira de Acantara
+#			Felipe Duarte dos Reis
 #
 ##########################################################################
 

@@ -1,0 +1,17 @@
+#%Module1.0
+# phylip module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do phylip"
+}
+
+module-whatis "Configura o ambiente para a utilização do phylip"
+
+set topdir /opt/bio/phylip
+set version 1.0
+set sys linux64
+
+prepend-path PATH $topdir/exe

@@ -1,0 +1,17 @@
+#%Module1.0
+# EMBOSS module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do EMBOSS"
+}
+
+module-whatis "Configura o ambiente para a utilização do EMBOSS"
+
+set topdir /opt/bio/EMBOSS
+set version 1.0
+set sys linux64
+
+prepend-path PATH $topdir/bin

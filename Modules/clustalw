@@ -1,0 +1,17 @@
+#%Module1.0
+# clustalw module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do clustalw"
+}
+
+module-whatis "Configura o ambiente para a utilização do clustalw"
+
+set topdir /opt/bio/clustalw
+set version 1.0
+set sys linux64
+
+prepend-path PATH $topdir/bin

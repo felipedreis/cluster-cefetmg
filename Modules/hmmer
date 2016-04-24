@@ -1,0 +1,19 @@
+#%Module1.0
+# HMMER module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do hmmer"
+}
+
+module-whatis "Configura o ambiente para a utilização do hmmer"
+
+set topdir /opt/bio/hmmer
+set version 1.0
+set sys linux64
+
+setenv HMMER_DB	ENV_HMMER_DB
+
+prepend-path PATH $topdir/bin

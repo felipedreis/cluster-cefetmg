@@ -1,0 +1,17 @@
+#%Module1.0
+# tigr module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do tigr"
+}
+
+module-whatis "Configura o ambiente para a utilização do tigr"
+
+set topdir /opt/bio/tigr
+set version 1.0
+set sys linux64
+
+prepend-path PATH $topdir/bin

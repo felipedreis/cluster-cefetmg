@@ -1,0 +1,17 @@
+#%Module1.0
+# mrbayes module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do mrbayes"
+}
+
+module-whatis "Configura o ambiente para a utilização do mrbayes"
+
+set topdir /opt/bio/mrbayes
+set version 1.0
+set sys linux64
+
+prepend-path PATH $topdir

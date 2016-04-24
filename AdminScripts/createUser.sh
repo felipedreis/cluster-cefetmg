@@ -31,7 +31,18 @@ if [ $# -eq 3 ];then
 	cp /root/script /export/home/$1
 	chown $1:$1 /export/home/$1/script
 
-	#cotas de BD
+	#Arquivo de configuracao para o Blast
+	echo "[NCBI]
+	Data=/opt/bio/ncbi/data/
+
+	[mpiBLAST]
+	Shared=$BLASTDB
+	Local=$BLASTDB" > /export/$1/.ncbirc
+	chown $1:$1 /export/$1/.ncbirc
+
+	#Diretório temporário para o t_coffee
+	mkdir -p /export/$1/.t_coffee/tmp
+	chown -R $1:$1 /export/$1/.t_coffee
 
 	echo -e "Usuario: $1 \nSenha: $userkey" | mailx -s "Usuario_Cluster" $1
 
@@ -63,7 +74,18 @@ else
 		cp /root/script /export/home/$1
 		chown $1:$1 /export/home/$1/script
 
-		#cotas de BD
+		#Arquivo de configuracao para o Blast
+		echo "[NCBI]
+		Data=/opt/bio/ncbi/data/
+
+		[mpiBLAST]
+		Shared=$BLASTDB
+		Local=$BLASTDB" > /export/$1/.ncbirc
+		chown $1:$1 /export/$1/.ncbirc
+
+		#Diretório temporário para o t_coffee
+		mkdir -p /export/$1/.t_coffee/tmp
+		chown -R $1:$1 /export/$1/.t_coffee
 
 		echo -e "Usuario: $1 \nSenha: $userkey" | mailx -s "Usuario_Cluster" $1
 

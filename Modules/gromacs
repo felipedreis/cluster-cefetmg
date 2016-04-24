@@ -1,0 +1,17 @@
+#%Module1.0
+# gromacs module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do gromacs"
+}
+
+module-whatis "Configura o ambiente para a utilização do gromacs"
+
+set topdir /opt/bio/gromacs
+set version 1.0
+set sys linux64
+
+prepend-path PATH $topdir/bin

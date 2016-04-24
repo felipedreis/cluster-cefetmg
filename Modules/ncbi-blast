@@ -1,0 +1,20 @@
+#%Module1.0
+# NCBI-BLAST module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do ncbi-blast"
+}
+
+module-whatis "Configura o ambiente para a utilização do ncbi-blast"
+
+set topdir /opt/bio/ncbi
+set version 1.0
+set sys linux64
+
+setenv BLASTDB 	ENV_BLAST_DB
+setenv BLASTMAT $topdir/data
+
+prepend-path PATH $topdir/bin

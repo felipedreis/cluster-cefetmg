@@ -1,0 +1,18 @@
+#%Module1.0
+# glimmer module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do glimmer"
+}
+
+module-whatis "Configura o ambiente para a utilização do glimmer"
+
+set topdir /opt/bio/glimmer
+set version 1.0
+set sys linux64
+
+prepend-path PATH $topdir/bin
+prepend-path PATH $topdir/scripts

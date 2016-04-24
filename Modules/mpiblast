@@ -1,0 +1,20 @@
+#%Module1.0
+# MPIBLAST module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do mpiblast"
+}
+
+module-whatis "Configura o ambiente para a utilização do mpiblast"
+
+set topdir /opt/bio/mpiblast
+set version 1.0
+set sys linux64
+
+setenv BLASTDB 	ENV_BLAST_DB
+setenv BLASTMAT $topdir/data
+
+prepend-path PATH $topdir/bin
