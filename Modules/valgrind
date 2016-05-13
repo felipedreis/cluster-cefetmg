@@ -1,0 +1,17 @@
+#%Module1.0
+# Valgrind 3.11.0 module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do Valgrind 3.11.0"
+}
+
+module-whatis "Configura o ambiente para a utilização do Valgrind 3.11.0"
+
+set topdir /opt/valgrind
+set version 3.11.0
+
+prepend-path PATH $topdir/bin
+prepend-path LD_LIBRARY_PATH $topdir/lib

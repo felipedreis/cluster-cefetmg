@@ -1,0 +1,17 @@
+#%Module1.0
+# Cmake 3.5.2 module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do Cmake 3.5.2"
+}
+
+module-whatis "Configura o ambiente para a utilização do Cmake 3.5.2"
+
+set topdir /opt/cmake 
+set version 3.5.2
+set sys linux64
+
+prepend-path PATH $topdir/bin

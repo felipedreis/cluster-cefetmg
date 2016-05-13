@@ -35,4 +35,4 @@ pip install numpy
 pip install pandas
 pip install scipy
 pip install sklearn
-pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.8.0rc0-cp27-none-linux_x86_64.whl
+pip install biopython

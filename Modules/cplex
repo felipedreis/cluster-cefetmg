@@ -1,0 +1,19 @@
+#%Module1.0
+# CPLEX module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do CPLEX"
+}
+
+module-whatis "Configura o ambiente para a utilização do CPLEX"
+
+set topdir /opt/ibm/ILOG/CPLEX_Enterprise_Server1263/CPLEX_Studio/cplex
+set version 12.6
+set sys linux64
+
+prepend-path PATH $topdir/bin/x86-64_linux
+prepend-path LD_LIBRARY_PATH $topdir/lib
+prepend-path LD_LIBRARY_PATH $topdir/lib/x86-64_linux/static_pic
