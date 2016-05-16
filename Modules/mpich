@@ -1,0 +1,19 @@
+#%Module1.0
+# MPICH 3.2 module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do MPICH 3.2"
+}
+
+module-whatis "Configura o ambiente para a utilização do MPICH 3.2"
+
+set topdir /opt/mpich
+set version 3.2
+set sys linux64
+
+setenv MPICH_DIR $topdir 
+prepend-path PATH $topdir/bin
+prepend-path LD_LIBRARY_PATH $topdir/lib
