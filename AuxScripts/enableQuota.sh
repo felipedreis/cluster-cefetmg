@@ -5,7 +5,7 @@
 #O fstab define se um determinado ponto de montagem pode possuir limitacoes de cotas.
 
 #A cota sera' habilitada para a particao "mountPoint"
-mountPoint="/state/partition1"
+mountPoint="/export/data1"
 
 echo "Habilitando cota de disco"
 

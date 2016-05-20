@@ -31,18 +31,18 @@ fi
 
 
 echo -e "\t\t***********DEPLOY CLUSTER F37 - DECOM***************\n 
-	\nEsse script irá configurar  todo a ambiente, é nescessário que seja executado fora do state/partition
+	\nEsse script irá configurar  todo a ambiente, é nescessário que seja executado fora do /state/partition
 	\nDeseja proceder ? (Y, N)"
-read reb
+read reb #Coisa do Gilms
 
 if [ $reb == 'Y' ]; then
     echo -e "Execucao do Deploy iniciada!!!\n\n"
 else
-        echo -e "Execuçao do Deploy cancelada\n"
+    echo -e "Execuçao do Deploy cancelada\n"
 	exit 0;
 fi
 
-cd $BASEDIR
+cd $BASE_DIR
 . env.config
 
 if [ ! -d ./Logs ];then
@@ -53,7 +53,9 @@ if [ ! -f ./checkpoint ];then
 	touch ./checkpoint
 fi
 
+#Prepara o extend-compute.xml
 cp "/export/rocks/install/site-profiles/$ROCKS_VER/nodes/skeleton.xml" "/export/rocks/install/site-profiles/$ROCKS_VER/nodes/extend-compute.xml"
+sed -i 's/python/bash/g' /export/rocks/install/site-profiles/$ROCKS_VER/nodes/extend-compute.xml
 
 ## Atualiza yum
 yum --enablerepo="base" update yum

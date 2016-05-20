@@ -5,9 +5,9 @@
 
 STATUS=/root/deploy.stat
 
-cd /export/rocks/install/site-profiles/6.1.1/nodes
+cd /export/rocks/install/site-profiles/$ROCKS_VER/nodes
 if [ $? -ne 0 ];then
-	echo "Nao foi possivel entrar no diretorio /export/rocks/install/site-profiles/6.1.1/nodes" &>2;
+	echo "Nao foi possivel entrar no diretorio /export/rocks/install/site-profiles/$ROCKS_VER/nodes" &>2;
 	exit 1;
 fi
 
@@ -25,10 +25,10 @@ while IFS="" read LINE;do
 		echo "<pre>
 		echo \"clearpart --all --initlabel --drives=sda
 		part swap --size 32768 --ondisk sda
-		part / --size 1 --grow --ondisk sda\" > /tmp/user_partition_info" >> replace-partition.xml
+		part / --size 1 --grow --ondisk sda\" &gt; /tmp/user_partition_info" >> replace-partition.xml
 	else
 		echo "$LINE" >> replace-partition.xml
 	fi
-done < /export/rocks/install/site-profiles/6.2/nodes/skeleton.xml
+done < /export/rocks/install/site-profiles/$ROCKS_VER/nodes/skeleton.xml
 
 echo "XML de particionamento dos computes criado"

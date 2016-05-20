@@ -13,7 +13,8 @@ yum --enablerepo="base, epel" --downloadonly --downloaddir=./ install lapack.i68
 
 yumdownloader --enablerepo="base, epel" mesa-libGL.x86_64 mesa-libGL-devel.x86_64 mesa-libGLU.x86_64 mesa-libGLU-devel.x86_64  mesa-libGLw.x86_64  mesa-libGLw-devel.x86_64  freeglut.x86_64  freeglut-devel.x86_64
 
-rpm -i *.rpm
+yum --setopt=protected_multilib=false localinstall *.rpm
+#rpm -i *.rpm
 
 for pack in $(ls *.rpm);do
 	$BASE_DIR/AuxScripts/addPackExtend.sh $pack

@@ -1,0 +1,17 @@
+#%Module1.0
+# GAMESS module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do GAMESS"
+}
+
+module-whatis "Configura o ambiente para a utilização do GAMESS"
+
+set topdir /opt/gamess
+set version 1.0
+set sys linux64
+
+prepend-path PATH $topdir
