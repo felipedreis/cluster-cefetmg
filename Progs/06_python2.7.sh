@@ -10,14 +10,6 @@ cd Python-2.7.11/
 make
 make install
 
-cd ..
-rm Python-2.7.11.tgz
-rocks create package /opt/python2.7 python2.7
-
-$BASE_DIR/AuxScripts/addPackageExtend.sh python*.rpm
-
-mv python*.rpm $RPM_CONTRIB_DIR
-
 cp $BASE_DIR/Modules/python2.7 /etc/modulefiles/
 
 #install pip for python2.7
@@ -33,3 +25,13 @@ pip install scipy
 pip install sklearn
 pip install --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-0.8.0rc0-cp27-none-linux_x86_64.whl
 pip install biopython
+
+cd ..
+rm Python-2.7.11.tgz
+
+rocks create package /opt/python2.7 python2.7
+
+$BASE_DIR/AuxScripts/addPackageExtend.sh python*.rpm
+
+mv python*.rpm $RPM_CONTRIB_DIR
+
