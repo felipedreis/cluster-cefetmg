@@ -7,7 +7,7 @@ tar -xf R-3.2.4-revised.tar.gz
 
 # configure and install R in /opt/R path
 cd R-revised
-./configure --prefix /opt/R  
+./configure --prefix=/opt/R  
 make
 make install
 

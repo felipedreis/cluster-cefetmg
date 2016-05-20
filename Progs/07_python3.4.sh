@@ -10,14 +10,6 @@ cd Python-3.4.4/
 make
 make install
 
-cd ..
-rm Python-3.4.4.tgz
-rocks create package /opt/python3.4 python3.4
-
-$BASE_DIR/AuxScripts/addPackageExtend.sh python*.rpm
-
-mv python*.rpm $RPM_CONTRIB_DIR
-
 cp $BASE_DIR/Modules/python3.4 /etc/modulefiles/
 
 ln -s /opt/python3.4/bin/python3 /opt/python3.4/bin/python
@@ -36,3 +28,11 @@ pip install pandas
 pip install scipy
 pip install sklearn
 pip install biopython
+
+cd ..
+rm Python-3.4.4.tgz
+rocks create package /opt/python3.4 python3.4
+
+$BASE_DIR/AuxScripts/addPackageExtend.sh python*.rpm
+
+mv python*.rpm $RPM_CONTRIB_DIR
