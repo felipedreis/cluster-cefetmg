@@ -1,6 +1,7 @@
 #!/bin/bash
 
-insert-ethers
+xterm -e insert-ethers
+#wait $!
 
 echo -e "\n#NAS" >> /etc/fstab
 echo -e "nas-0-0:/export/data1\t/export/home\tnfs\trsize=8192,wsize=8192,timeo=14,intr" >> /etc/fstab
