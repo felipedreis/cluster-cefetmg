@@ -1,16 +1,16 @@
 #!/bin/bash
 
-cd /tmp
+mkdir -p /tmp/python_3
+cd /tmp/python_3
+
 wget https://www.python.org/ftp/python/3.4.4/Python-3.4.4.tgz
 
 tar -xf Python-3.4.4.tgz 
 cd Python-3.4.4/
 
 ./configure --prefix=/opt/python3.4
-make
+make -j8
 make install
-
-cp $BASE_DIR/Modules/python3.4 /etc/modulefiles/
 
 ln -s /opt/python3.4/bin/python3 /opt/python3.4/bin/python
 
@@ -36,3 +36,6 @@ rocks create package /opt/python3.4 python3.4
 $BASE_DIR/AuxScripts/addPackageExtend.sh python*.rpm
 
 mv python*.rpm $RPM_CONTRIB_DIR
+
+cd /tmp
+rm -rf python_3

@@ -1,16 +1,16 @@
 #!/bin/bash
 
-cd /tmp
+mkdir -p /tmp/python_2
+cd /tmp/python_2
+
 wget https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz
 
 tar -xf Python-2.7.11.tgz 
 cd Python-2.7.11/
 
 ./configure --prefix=/opt/python2.7
-make
+make -j8
 make install
-
-cp $BASE_DIR/Modules/python2.7 /etc/modulefiles/
 
 #install pip for python2.7
 module load python2.7
@@ -35,3 +35,5 @@ $BASE_DIR/AuxScripts/addPackageExtend.sh python*.rpm
 
 mv python*.rpm $RPM_CONTRIB_DIR
 
+cd /tmp
+rm -rf python_2

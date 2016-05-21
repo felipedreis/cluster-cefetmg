@@ -1,7 +1,8 @@
 #!/bin/bash
 
-mkdir /tmp/cplex
+mkdir -p /tmp/cplex
 
+#colocar cplex no dropbox...
 cp /export/files/cplex_installer.bin /tmp/cplex
 
 if [ ! -f  /export/files/cplex_installer.bin ]; then

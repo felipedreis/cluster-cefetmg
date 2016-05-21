@@ -58,3 +58,6 @@ rocks create package /opt/gamess gamess
 $BASE_DIR/AuxScripts/addPackageExtend.sh gamess*.rpm
 
 mv gamess*.rpm $RPM_CONTRIB_DIR
+
+cd /tmp
+rm -rf gamess
