@@ -54,8 +54,10 @@ if [ ! -f ./checkpoint ];then
 fi
 
 #Prepara o extend-compute.xml
-cp "/export/rocks/install/site-profiles/$ROCKS_VER/nodes/skeleton.xml" "/export/rocks/install/site-profiles/$ROCKS_VER/nodes/extend-compute.xml"
-sed -i 's/python/bash/g' /export/rocks/install/site-profiles/$ROCKS_VER/nodes/extend-compute.xml
+if [ ! -f /export/rocks/install/site-profiles/$ROCKS_VER/nodes/extend-compute.xml ];then
+	cp "/export/rocks/install/site-profiles/$ROCKS_VER/nodes/skeleton.xml" "/export/rocks/install/site-profiles/$ROCKS_VER/nodes/extend-compute.xml"
+	sed -i 's/python/bash/g' /export/rocks/install/site-profiles/$ROCKS_VER/nodes/extend-compute.xml
+fi
 
 ## Atualiza yum
 yum --enablerepo="base" update yum

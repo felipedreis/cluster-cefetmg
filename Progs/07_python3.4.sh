@@ -33,7 +33,7 @@ cd ..
 rm Python-3.4.4.tgz
 rocks create package /opt/python3.4 python3.4
 
-$BASE_DIR/AuxScripts/addPackageExtend.sh python*.rpm
+$BASE_DIR/AuxScripts/addPackageExtend.sh $(ls python*.rpm)
 
 mv python*.rpm $RPM_CONTRIB_DIR
 

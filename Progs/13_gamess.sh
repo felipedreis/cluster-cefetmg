@@ -55,7 +55,7 @@ sed -i 's|set GMSPATH=.*|set GMSPATH=/opt/gamess|' rungms
 cd ..
 rocks create package /opt/gamess gamess
 
-$BASE_DIR/AuxScripts/addPackageExtend.sh gamess*.rpm
+$BASE_DIR/AuxScripts/addPackageExtend.sh $(ls gamess*.rpm)
 
 mv gamess*.rpm $RPM_CONTRIB_DIR
 

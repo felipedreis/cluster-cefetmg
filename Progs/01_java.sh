@@ -11,7 +11,7 @@ rm -f jdk-7u79-linux-x64.rpm
 
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.rpm
 rpm  -i --prefix=/opt/java jdk-8u91-linux-x64.rpm
-rm -f jdk-8u73-b02-linux-x64.rpm
+rm -f jdk-8u91-linux-x64.rpm
 
 yum check
 

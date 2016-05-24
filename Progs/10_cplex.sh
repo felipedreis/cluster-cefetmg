@@ -25,7 +25,6 @@ rocks create package /opt/ibm/ILOG/CPLEX_Enterprise_Server1263 cplex
 $BASE_DIR/AuxScripts/addPackExtend.sh $(ls cplex-*.rpm)
 
 mv cplex*.rpm $RPM_CONTRIB_DIR
-mv $BASE_DIR/Modules/cplex /etc/modulefiles
 
 cd ..
 rm -rf cplex

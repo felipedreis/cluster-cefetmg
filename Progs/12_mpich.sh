@@ -16,7 +16,7 @@ cd ..
 
 rocks create package /opt/mpich mpich
 
-$BASE_DIR/AuxScripts/addPackageExtend.sh mpich*.rpm
+$BASE_DIR/AuxScripts/addPackageExtend.sh $(ls mpich*.rpm)
 
 mv mpich*.rpm $RPM_CONTRIB_DIR
 

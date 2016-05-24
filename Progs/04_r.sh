@@ -20,9 +20,9 @@ rm R-3.2.4.revised.tar.gz
 
 rocks create package /opt/R R
 
-$BASE_DIR/AuxScripts/addPackExtend.sh R-*.rpm
+$BASE_DIR/AuxScripts/addPackExtend.sh $(ls R-*.rpm)
 
-mv R-* $RPM_CONTRIB_DIR
+mv R-*.rpm $RPM_CONTRIB_DIR
 
 cd /tmp
 rm -rf r
