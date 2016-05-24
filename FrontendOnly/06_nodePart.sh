@@ -11,9 +11,6 @@ if [ $? -ne 0 ];then
 	exit 1;
 fi
 
-#O comando abaixo sera' inserido no replace-partition.xml. O comando indica para criar uma particao / de 100GB, outra swap, e o restante para uma 
-# particao "mydata". Nao ha' necessidade de se criar esta particao.
-
 touch replace-partition.xml
 if [ ! -f  replace-partition.xml ];then
 	echo "Nao foi possivel criar o arquivo replace-partition.xml" &>2;
