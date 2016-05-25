@@ -1,0 +1,13 @@
+#%Module1.0
+# Java 7_32 module file
+#
+proc ModulesHelp { } {
+        global version modroot
+        puts stderr "Configura o ambiente para a utilização do JDK 7 32 bits"
+}
+module-whatis   "Configura o ambiente para a utilização do JDK 7 32 bits"
+set     		topdir		/opt/java/jdk1.7.0_80_32bits
+set     		version 	1.7.0_80
+set     		sys 		linux32
+setenv			JAVA_HOME	$topdir
+prepend-path    	PATH 		$topdir/bin

@@ -7,6 +7,7 @@ cd /tmp/libs
 yum --enablerepo="base, epel" --downloadonly --downloaddir=./ install blas-devel.i686 blas-devel.x86_64 blas.i686 blas.x86_64 
 yum --enablerepo="base, epel" --downloadonly --downloaddir=./ install atlas.i686 atlas.x86_64 
 yum --enablerepo="base, epel" --downloadonly --downloaddir=./ install lapack.i686 lapack.x86_64 lapack-devel.x86_64 lapack-devel.i686
+yum --enablerepo="base" --downloadonly --downloaddir=./ install libgcc.i686
 
 # MESA OpenGL libraries
 # must use yumdownloader as part of them are already installed, yum --downloadonly may fail
