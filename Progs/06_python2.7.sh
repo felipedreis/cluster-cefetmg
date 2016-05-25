@@ -5,6 +5,11 @@ cd /tmp/python_2
 
 wget https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tgz
 
+if [ ! -f Python-2.7.11.tgz ];then
+	echo "Falha ao baixar o arquivo de instalação do Python-2"
+	exit 1
+fi
+
 tar -xf Python-2.7.11.tgz 
 cd Python-2.7.11/
 

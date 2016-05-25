@@ -5,6 +5,11 @@ cd /tmp/mpich
 
 wget http://www.mpich.org/static/downloads/3.2/mpich-3.2.tar.gz
 
+if [ ! -f mpich-3.2.tar.gz ];then
+	echo "Falha ao baixar o arquivo de instalação do MPICH"
+	exit 1
+fi
+
 tar -xzf mpich-3.2.tar.gz
 cd mpich-3.2
 

@@ -5,6 +5,11 @@ cd /tmp/octave
 
 wget http://ftp.gnu.org/gnu/octave/octave-4.0.1.tar.gz
 
+if [ ! -f octave-4.0.1.tar.gz ];then
+	echo "Falha ao baixar o arquivo de instalação do OCTAVE"
+	exit 1
+fi
+
 tar -xzf octave-4.0.1.tar.gz
 
 # Compila o octave. No passo de config ele checa a existencia de libblas

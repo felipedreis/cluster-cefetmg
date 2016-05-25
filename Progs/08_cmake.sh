@@ -4,6 +4,12 @@ mkdir -p /tmp/cmake
 cd /tmp/cmake
 
 wget https://cmake.org/files/v3.5/cmake-3.5.2.tar.gz
+
+if [ ! -f cmake-3.5.2.tar.gz ];then
+	echo "Falha ao baixar o arquivo de instalação do CMAKE"
+	exit 1
+fi
+
 tar -xf cmake-3.5.2.tar.gz
 
 cd cmake-3.5.2

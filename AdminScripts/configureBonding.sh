@@ -25,5 +25,9 @@ for host in $(rocks list host | grep -v ^HOST | cut -d":" -f1);do
 		rocks sync config
 		echo "Updating host configuration"
 		rocks sync host network $host
+		echo "Adding parameters"
+		rocks set host interface options $host bond0 options="miimon=100 mode=balance-tlb"
+		echo "Updating host configuration"
+		rocks sync host network $host
 	fi
 done

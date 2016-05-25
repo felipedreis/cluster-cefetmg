@@ -5,6 +5,11 @@ cd /tmp/python_3
 
 wget https://www.python.org/ftp/python/3.4.4/Python-3.4.4.tgz
 
+if [ ! -f Python-3.4.4.tgz ];then
+	echo "Falha ao baixar o arquivo de instalação do Python-3"
+	exit 1
+fi
+
 tar -xf Python-3.4.4.tgz 
 cd Python-3.4.4/
 

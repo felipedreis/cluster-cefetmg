@@ -5,6 +5,11 @@ cd /tmp/trinity
 
 wget https://github.com/trinityrnaseq/trinityrnaseq/archive/v2.2.0.tar.gz
 
+if [ ! -f v2.2.0.tar.gz ];then
+	echo "Falha ao baixar o arquivo de instalação do Trinity"
+	exit 1
+fi
+
 tar -xzf v2.2.0.tar.gz
 
 cp trinityrnaseq-2.2.0 /opt/trinity-2.2.0

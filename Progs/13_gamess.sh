@@ -4,6 +4,12 @@ mkdir -p /tmp/gamess
 cd /tmp/gamess
 
 wget -c https://www.dropbox.com/sh/miho1ik1va8snmr/AACzbAdMz6QgPBcLVE6wqinqa/gamess-current.tar.gz?dl=0
+
+if [ ! -f gamess-current.tar.gz?dl=0 ];then
+	echo "Falha ao baixar o arquivo de instalação do GAMESS"
+	exit 1
+fi
+
 mv gamess-current.tar.gz?dl=0 gamess-current.tar.gz
 
 tar -xzf gamess-current.tar.gz -C /opt

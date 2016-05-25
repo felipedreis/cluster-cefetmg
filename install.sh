@@ -63,7 +63,9 @@ fi
 yum --enablerepo="base" update yum
 
 #grupo default para evitar ssh nos computes
-groupadd cluster
+if [ -z $(cat /etc/group | grep cluster) ];then
+	groupadd cluster
+fi
 
 #### Executa scripts do Frontend
 for script in $(ls $FRONT_ONLY) ;do

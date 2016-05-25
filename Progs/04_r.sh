@@ -4,7 +4,12 @@ mkdir -p /tmp/r
 cd /tmp/r
 
 #download the latest stable version of R
-wget https://cloud.r-project.org/src/base/R-3/R-3.2.4-revised.tar.gz 
+wget https://cloud.r-project.org/src/base/R-3/R-3.2.4-revised.tar.gz
+
+if [ ! -f R-3.2.4-revised.tar.gz ];then
+	echo "Falha ao baixar o arquivo de instalação do R"
+	exit 1
+fi
 
 tar -xf R-3.2.4-revised.tar.gz 
 
