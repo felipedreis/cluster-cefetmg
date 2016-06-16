@@ -22,7 +22,7 @@ FLAG=1;
 while IFS="" read -r LINE;do
 	if [[ "${LINE}" == "		for host in hosts:" ]];then
 		echo "${LINE}" >> __init__.py.tmp;
-		echo -e "\t\t\tif host != hosts[0]:" >> __init__.py.tmp
+		echo -e "\t\t\tif host != os.uname()[1].split('.',1)[0]:" >> __init__.py.tmp
 		echo -e "\t\t\t\tcmd = 'scp -q -o UserKnownHostsFile=%s %s root@%s:%s' % \\" >> __init__.py.tmp;
 		echo -e "\t\t\t\t\t(khfname,fname, host, fname)" >> __init__.py.tmp;
 		echo -e "\t\t\t\tp = Parallel(cmd, host)" >> __init__.py.tmp;

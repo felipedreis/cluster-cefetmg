@@ -85,4 +85,8 @@ SlurmctldLogFile=/var/log/slurm/slurmctld.log
 SlurmdDebug=3
 SlurmdLogFile=/var/log/slurm/slurmd.log
 
-# COMPUTE NODES 
+################ Do not edit below #############################################################
+include /etc/slurm/headnode.conf
+include /etc/slurm/nodenames.conf
+include /etc/slurm/partitions.conf
+################################################################################################

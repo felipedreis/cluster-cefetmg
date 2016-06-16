@@ -14,7 +14,7 @@ from rocks.commands.sync.host import timeout
 
 class Command(rocks.commands.sync.command):
 	def run(self, params, args):
-		cmd="rocks list host | grep -v Frontend | grep -v ^HOST | cut -d':' -f1 | tr -s '\n' ' '"
+		cmd="rocks list host | grep -v Frontend | grep -v ^HOST | cut -d':' -f1"
 		files='/etc/modulefiles/*'
 		path='/etc/modulefiles'	
 		threads=[]
