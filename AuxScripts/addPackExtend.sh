@@ -9,11 +9,13 @@ if [ $? -ne 0 ];then
 	exit 1;
 fi
 
+PACK=`rpm -qp $1` 
+
 IFS=$'\n'
 while read line;do
 	if [ "$line" == "</pre>" ];then
 		echo -e $line >> extend-compute.xml.tmp;
-		echo -e "<package>$1</package>" >> extend-compute.xml.tmp
+		echo -e "<package>$PACK</package>" >> extend-compute.xml.tmp
 	else
 		echo -e $line >> extend-compute.xml.tmp;
 	fi

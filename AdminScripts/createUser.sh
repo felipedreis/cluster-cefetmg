@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! $# -eq 3 || ! $# -eq 1 ];then
+if [ ! $# -eq 3 ] && [ ! $# -eq 1 ];then
 	echo "$0 usuario email data_de_expiracao(aaaa-mm-dd)"
 	echo -e "\t\t\tou"
 	echo "$0 lista_de_usuarios"

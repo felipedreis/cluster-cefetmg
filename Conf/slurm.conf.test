@@ -74,8 +74,9 @@ PriorityMaxAge=1-0
 PriorityWeightQOS=10000
 
 AccountingStorageEnforce=limits
-AccountingStorageType=accounting_storage/none
+AccountingStorageType=accounting_storage/slurmdbd
 AccountingStoreJobComment=NO
+AccountingStorageTRES=gres/gpu
 
 JobCompType=jobcomp/none
 JobAcctGatherFrequency=30
