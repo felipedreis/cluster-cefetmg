@@ -12,6 +12,8 @@ if [ ! -f  ./cplex_installer.bin ]; then
 	exit 1
 fi
 
+chmod +x cplex_installer.bin
+
 ./cplex_installer.bin <<< "5
 
 1
