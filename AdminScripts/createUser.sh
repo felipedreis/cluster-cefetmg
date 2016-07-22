@@ -30,7 +30,7 @@ if [ $# -eq 4 ];then
 	service postfix reload
 
 	#Define a cota. 4GB soft - 5GB hard
-	setquota $user 4194304 5242880 0 0 /state/partition1
+	setquota $user 4194304 5242880 0 0 /export/data1
 
 	#Copia o sbatch para o home do usuario
 	cp /root/script /export/home/$user
@@ -75,7 +75,7 @@ else
 		newaliases
 		service postfix reload
 
-		setquota $user 4194304 5242880 0 0 /state/partition1
+		setquota $user 4194304 5242880 0 0 /export/data1
 
 		cp /root/script /export/home/$user
 		chown $user:$user /export/home/$user/script
