@@ -1,0 +1,18 @@
+#%Module1.0
+# GCC 6.1 module file
+#
+
+proc ModulesHelp { } {
+global version modroot
+
+puts stderr "Configura o ambiente para a utilização do GCC 6.1. OpenMP 4.5 é completamente suportado nessa versão."
+}
+
+module-whatis "Configura o ambiente para a utilização do GCC 6.1. OpenMP 4.5 é completamente suportado nessa versão."
+
+set topdir /opt/gcc
+set version 6.1
+set sys linux64
+
+prepend-path PATH $topdir/bin
+prepend-path LD_LIBRARY_PATH $topdir/lib
