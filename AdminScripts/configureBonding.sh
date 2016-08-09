@@ -25,7 +25,7 @@ for host in $(rocks list host | grep compute-* | cut -d":" -f1);do
 			echo "Updating host configuration"
 			rocks sync host network $host
 			echo "Adding parameters"
-			rocks set host interface options $host bond0 options="miimon=100 mode=balance-tlb"
+			rocks set host interface options $host bond0 options="miimon=100 mode=balance-alb"
 			echo "Updating host configuration"
 			rocks sync host network $host
 			echo "Syncing config"
@@ -38,7 +38,7 @@ for host in $(rocks list host | grep compute-* | cut -d":" -f1);do
 			echo "Updating host configuration"
 			rocks sync host network $host
 			echo "Adding parameters"
-			rocks set host interface options $host bond0 options="miimon=100 mode=balance-tlb"
+			rocks set host interface options $host bond0 options="miimon=100 mode=balance-alb"
 			echo "Updating host configuration"
 			rocks sync host network $host
 		fi
