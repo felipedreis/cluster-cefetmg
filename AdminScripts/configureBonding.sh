@@ -6,7 +6,7 @@ for host in $(rocks list host | grep -v ^HOST | cut -d":" -f1);do
 	if [[ -z $(rocks list host interface $host | grep bond0) ]];then
 		ifaces=""
 
-		for line in $(rocks list host interface $host | grep -v ^SUBNET | tr -s ' ' '_');do
+		for line in $(rocks list host interface $host | grep -v ^SUBNET | grep -v public | tr -s ' ' '_');do
 			if [[ "$line" =~ ^private* ]];then
 				ip=$(echo $line | cut -d"_" -f4)
 				iface=$(echo $line | cut -d"_" -f2)
