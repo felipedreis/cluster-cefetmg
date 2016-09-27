@@ -85,6 +85,7 @@ Todo usuário está também limitado a executar 100 jobs simultâneos. Caso nenh
 ### Softwares e bibliotecas instaladas 
 
 O cluster foi instalado com compiladores/interpretadores/softwares mais utilizados nas áreas de pesquisa em modelagem matemática computacional. O usuário conta com as seguintes linguagens de programação:
+ 
  * CUDA 7.0.28
  * Java Oracle 7u80, 32 bits e 64 bits
  * Java Oracle 8u92, 32 bits e 64 bits
@@ -95,12 +96,14 @@ O cluster foi instalado com compiladores/interpretadores/softwares mais utilizad
  * GCC 6.0.1 (Inclui C, C++, Fortran e Go)
 
 As bibliotecas instaladas:
+
  * blas
  * atlas
  * lapack 
  * libgcc
 
 Os seguintes softwares:
+ 
  * CPLEX 12.6.3
  * GAMESS
  * MPI 1.5.4
@@ -108,6 +111,7 @@ Os seguintes softwares:
  * Trinity 2.2.0
 
 Outras ferramentas instaladas:
+ 
  * Cmake 3.5.2
  * Postgres 9.4
  * Valgrind 3.11
