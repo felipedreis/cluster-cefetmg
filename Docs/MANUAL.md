@@ -7,8 +7,8 @@ O Cluster F37 é um ambiente de computação de alto desempenho para fins de pes
 
 Para criar uma conta é necessário submeter uma solicitação no site do [LCAD](http://www.lcad.cefetmg.br), na área solicitações. A solicitação da conta será analisada pela coordenação do MMC. Os usuários do cluster são alocados em grupos de acordo com o departamento em que o mesmo está lotado na instituição, os possíveis grupos são:
 
- * **ppgmmg**: Alunos ou professores do Programa de Pós-Graduação em Modelagem Matemática Computacional
- * **posss**: Alunos ou professores de outros Programas de Pós-Graduação *Strictu-Sensu*
+ * **ppgmmc**: Alunos ou professores do Programa de Pós-Graduação em Modelagem Matemática Computacional
+ * **pgss**: Alunos ou professores de outros Programas de Pós-Graduação *Strictu-Sensu*
  * **pesq**: Pesquisadores da instituição que não estão filiados a nenhum programa de pesquisa
  * **ict**: Professores e alunos de iniciação científica
  * **didático**: Professores e alunos que queiram usar o cluster para fins didáticos
@@ -26,6 +26,7 @@ No Putty é necessário configurar a porta como a 2200, e o host como `cluster.l
 ## Arquitetura de Hardware
 
 O F37 conta com 32 máquinas de uso compartilhado, em 3 diferentes configurações. Essas máquinas estão agrupadas nas filas **small**, **medium**, **large**.
+
  * **small**: 11 Máquinas Dell, processador XEON 8 threads (8 físicas), sem hyperthread, 48GB RAM (em média)
  * **medium**: 17 Máquinas Dell, processador XEON 16 threads (8 físicas), com hyperthread, 32 GB RAM (em média)
  * **large**: 4 Máquinas Supermicro, 64 threads (64 físicas), sem hyperthread, 128 GB RAM
@@ -86,6 +87,7 @@ Todo usuário está também limitado a executar 100 jobs simultâneos. Caso nenh
 
 O cluster foi instalado com compiladores/interpretadores/softwares mais utilizados nas áreas de pesquisa em modelagem matemática computacional. O usuário conta com as seguintes linguagens de programação:
  
+ * BLAST 2.2.25
  * CUDA 7.0.28
  * Java Oracle 7u80, 32 bits e 64 bits
  * Java Oracle 8u92, 32 bits e 64 bits
@@ -152,3 +154,10 @@ Para executar um job que utiliza um ou mais módulos específicos é necessário
 
 srun cplex -f modelo.txt
 </pre>
+
+
+## Disponibilidade de disco
+
+O cluster conta com um espaço em disco de 3 TB, sendo 1 TB reservado para home de usuários e 2 TB em um storage para uso compartilhado. Todo usuário tem uma cota inicial de disco de 5GB. Essa cota é expansível de acordo com a necessidade do usuário e da disponibilidade em disco. Tanto a expansão da cota em disco quanto o acesso ao storage devem passar por analise e aprovação do administrador do sistema.
+
+Essa arquitetura de disco é centralizada, o que caracteriza um problema para usuários que fazem muito acesso ao disco. Se um processo fizer constantes leituras e escritas no home do usuário, isso pode causar lentidão para outros processos que acessam o disco. Portanto a orientação é que o usuário se encarregue de copiar os arquivos que necessitar para o diretório temporário da máquina que está executando o processo e, ao finalizar a computação, copiar os arquivos de volta para o home caso necessário. Se o overhead de acesso ao home for constante e incômodo o processo será finalizado pelo administrador e o usuário será notificado para alterar seu programa. 
