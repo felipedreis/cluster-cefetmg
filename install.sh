@@ -13,7 +13,7 @@
 # Este script sera' executado uma unica vez, apos a instalacao do Rocks
 
 #Armazena o local onde o script esta' armazenado
-export BASEDIR=$(pwd)
+BASEDIR=$(pwd)
 
 #vars
 LOG_DIR="$BASEDIR/Logs"
@@ -22,6 +22,7 @@ FRONT_ONLY="$BASEDIR/FrontendOnly"
 CHKP_FILE="$BASEDIR/checkpoint"
 
 export BASE_DIR=$BASEDIR
+. env.config
 
 if [ $(id -u) -ne "0" ];then
 	echo "Este script deve ser executado com o usuario root"
@@ -41,9 +42,6 @@ else
     echo -e "Execuçao do Deploy cancelada\n"
 	exit 0;
 fi
-
-cd $BASE_DIR
-. env.config
 
 if [ ! -d ./Logs ];then
 	mkdir Logs
@@ -66,7 +64,7 @@ yum --enablerepo="base" update yum
 if [ -z $(cat /etc/group | grep cluster) ];then
 	groupadd cluster
 fi
-
+exit 0
 #### Executa scripts do Frontend
 for script in $(ls $FRONT_ONLY) ;do
 	if [ -z $(cat $CHKP_FILE | grep $script) ];then

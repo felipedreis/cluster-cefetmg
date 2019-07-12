@@ -1,6 +1,11 @@
 #!/bin/bash
+NODES_PATH=/export/rocks/install/site-profiles/$ROCKS_VER/nodes/
 
-cd /export/rocks/install/site-profiles/$ROCKS_VER/nodes/
+PACK=`rpm -qp $1`
+
+mv $1 $RPM_CONTRIB_DIR
+
+cd $NODES_PATH
 
 touch extend-compute.xml.tmp
 
@@ -8,8 +13,6 @@ if [ $? -ne 0 ];then
 	echo "Erro ao criar arquivo temporario \"extend-compute.xml.tmp\"" 1>&2
 	exit 1;
 fi
-
-PACK=`rpm -qp $1` 
 
 IFS=$'\n'
 while read line;do
