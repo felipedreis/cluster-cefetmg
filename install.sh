@@ -13,7 +13,7 @@
 # Este script sera' executado uma unica vez, apos a instalacao do Rocks
 
 #Armazena o local onde o script esta' armazenado
-BASEDIR=$(pwd)
+export BASEDIR=$(pwd)
 
 #vars
 LOG_DIR="$BASEDIR/Logs"

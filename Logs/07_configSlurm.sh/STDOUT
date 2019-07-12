@@ -1,0 +1,150 @@
+ Adding Account(s)
+  cefetmg
+ Settings
+  Description     = cluster default account
+  Organization    = cefetmg
+ Associations
+  A = cefetmg    C = rocks-clus
+ Settings
+  Parent        = root
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Adding Account(s)
+  ppgmmc
+ Settings
+  Description     = user group
+  Organization    = Parent/Account Name
+ Associations
+  A = ppgmmc     C = rocks-clus
+ Settings
+  Parent        = cefetmg
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Adding Account(s)
+  posss
+ Settings
+  Description     = user group
+  Organization    = Parent/Account Name
+ Associations
+  A = posss      C = rocks-clus
+ Settings
+  Parent        = cefetmg
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Adding Account(s)
+  pesq
+ Settings
+  Description     = user group
+  Organization    = Parent/Account Name
+ Associations
+  A = pesq       C = rocks-clus
+ Settings
+  Parent        = cefetmg
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Adding Account(s)
+  ict
+ Settings
+  Description     = user group
+  Organization    = Parent/Account Name
+ Associations
+  A = ict        C = rocks-clus
+ Settings
+  Parent        = cefetmg
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Adding Account(s)
+  didatico
+ Settings
+  Description     = user group
+  Organization    = Parent/Account Name
+ Associations
+  A = didatico   C = rocks-clus
+ Settings
+  Parent        = cefetmg
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Modified account associations...
+  C = rocks-cluster A = cefetmg of root
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Adding QOS(s)
+  part30d
+ Settings
+  Description    = QOS Name
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Adding QOS(s)
+  part10d
+ Settings
+  Description    = QOS Name
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Adding QOS(s)
+  part2d
+ Settings
+  Description    = QOS Name
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Adding QOS(s)
+  part1d
+ Settings
+  Description    = QOS Name
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Adding QOS(s)
+  part12h
+ Settings
+  Description    = QOS Name
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Adding QOS(s)
+  part6h
+ Settings
+  Description    = QOS Name
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Modified qos...
+  part30d
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Modified qos...
+  part10d
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Modified qos...
+  part2d
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Modified qos...
+  part1d
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Modified qos...
+  part12h
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Modified qos...
+  part6h
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Modified account associations...
+  C = rocks-cluster A = ppgmmc of cefetmg
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Modified account associations...
+  C = rocks-cluster A = posss of cefetmg
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Modified account associations...
+  C = rocks-cluster A = pesq of cefetmg
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Modified account associations...
+  C = rocks-cluster A = ict of cefetmg
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 
+ Modified account associations...
+  C = rocks-cluster A = didatico of cefetmg
+Would you like to commit changes? (You have 30 seconds to decide)
+(N/y): 

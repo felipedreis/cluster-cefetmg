@@ -48,7 +48,7 @@ rocks create package /opt/java java
 
 $BASE_DIR/AuxScripts/addPackExtend.sh $(ls java-*.rpm)
 
-mv java-* $RPM_CONTRIB_DIR
+mv java-*.rpm $RPM_CONTRIB_DIR
 
 cd /tmp
 rm -rf java

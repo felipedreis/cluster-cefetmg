@@ -1,0 +1,154 @@
+cp /opt/rocks/share/devel/etc/Rules.mk Rules.mk
+cp /opt/rocks/share/devel/etc/Rules-linux.mk Rules-linux.mk
+cp /opt/rocks/share/devel/etc/Rules-linux-centos.mk Rules-linux-centos.mk
+cp /opt/rocks/share/devel/etc/python.mk python.mk
+cp /opt/rocks/share/devel/etc/rocks-version-common.mk rocks-version-common.mk
+cp /opt/rocks/share/devel/etc/rocks-version.mk rocks-version.mk
+make pkg
+make[1]: Entering directory `/tmp/tmppCjtqm'
+
+::: rpm-mkdirs :::
+
+if [ ! -x /tmp/tmppCjtqm/SOURCES ]; then mkdir -p /tmp/tmppCjtqm/SOURCES; fi
+if [ ! -x /tmp/tmppCjtqm/BUILD  ]; then  mkdir -p /tmp/tmppCjtqm/BUILD; fi
+if [ ! -x /tmp/tmppCjtqm/SPECS ]; then   mkdir -p /tmp/tmppCjtqm/SPECS; fi
+if [ ! -x /tmp/tmppCjtqm/RPMS ]; then    mkdir -p /tmp/tmppCjtqm/RPMS; fi
+if [ ! -x /tmp/tmppCjtqm/SRPMS ]; then   mkdir -p /tmp/tmppCjtqm/SRPMS; fi
+rm rocks-version-common.mk 
+rm rocks-version.mk rocks-copyright.txt
+rm -f python.mk
+rm -f /tmp/tmppCjtqm/.rpmmacros
+rm -f /tmp/tmppCjtqm/SOURCES/trinity-1.0.tar
+rm -f /tmp/tmppCjtqm/SOURCES/trinity-1.0.tar.gz
+rm -rf trinity.buildroot
+rm -f  trinity.spec.mk
+rm -f trinity.spec
+rm Rules-linux-centos.mk
+rm Rules-linux.mk _distribution
+rm -f _arch _os _lang
+rm Rules-install.mk
+rm Rules-scripts.mk
+rm Rules-rcfiles.mk
+rm -f Rules.mk
+rm -rf rocks.dsl rocks.css stylesheet-images entities.sgml
+rm -f roll-*.sgml
+rm -f images/roll-*.png
+rm -f genrcldocs
+make Rules.mk rocks-version.mk pretar 
+make[2]: Entering directory `/tmp/tmppCjtqm'
+cp /opt/rocks/share/devel/etc/Rules.mk Rules.mk
+cp /opt/rocks/share/devel/etc/Rules-linux.mk Rules-linux.mk
+cp /opt/rocks/share/devel/etc/Rules-linux-centos.mk Rules-linux-centos.mk
+cp /opt/rocks/share/devel/etc/python.mk python.mk
+cp /opt/rocks/share/devel/etc/rocks-version-common.mk rocks-version-common.mk
+cp /opt/rocks/share/devel/etc/rocks-version.mk rocks-version.mk
+make[2]: Leaving directory `/tmp/tmppCjtqm'
+make[2]: Entering directory `/tmp/tmppCjtqm'
+make[2]: `Rules.mk' is up to date.
+make[2]: `rocks-version.mk' is up to date.
+make[2]: Nothing to be done for `pretar'.
+make[2]: Leaving directory `/tmp/tmppCjtqm'
+if [ `basename /tmp/tmppCjtqm` = usersguide ]; then make predoc; fi;
+rm -rf trinity-1.0
+ln -s . trinity-1.0
+tar -cf /tmp/tmppCjtqm/SOURCES/trinity-1.0.tar --exclude trinity-1.0/trinity-1.0  trinity-1.0/*
+rm trinity-1.0
+gzip -f /tmp/tmppCjtqm/SOURCES/trinity-1.0.tar
+printf "Summary: trinity\n" > trinity.spec
+printf "Name: trinity\n" >> trinity.spec
+printf "Version: 1.0\n" >> trinity.spec
+printf "Release: 1\n" >> trinity.spec
+printf "License: " >>trinity.spec
+if [ ! -f LICENSE ]; then			\
+		printf "University of California\n" >> trinity.spec;		\
+	else						\
+		cat LICENSE >> trinity.spec;			\
+	fi
+printf "Vendor: Rocks Clusters\n" >> trinity.spec
+printf "Group: System Environment/Base\n" >> trinity.spec
+printf "Source: trinity-1.0.tar.gz\n" >> trinity.spec
+printf "Buildroot: /tmp/tmppCjtqm/trinity.buildroot\n" >> trinity.spec
+printf "\n" >> trinity.spec
+printf "\n" >> trinity.spec
+printf "\n" >> trinity.spec
+echo -e "AutoReqProv: no" >> trinity.spec
+printf "%%description\n" >> trinity.spec
+if [ ! -f DESCRIPTION ]; then			\
+		printf "trinity\n" >> trinity.spec;	\
+	else						\
+		cat DESCRIPTION >> trinity.spec;			\
+	fi
+if [ ! -z  ]; then \
+	echo "" >> trinity.spec; \
+	echo "%package " >> trinity.spec; \
+	echo "Summary: trinity" >> trinity.spec; \
+	echo "Group: System Environment/Base" >> trinity.spec; \
+	echo "%description " >> trinity.spec; \
+	echo "trinity" >> trinity.spec; \
+	fi
+if [ -z "" ]; then \
+	echo "BUILDROOT=/tmp/tmppCjtqm/trinity.buildroot make -f /tmp/tmppCjtqm/trinity.spec.mk build" >> trinity.spec; \
+	else \
+	echo "BUILDROOT=/tmp/tmppCjtqm/trinity.buildroot make build" >> trinity.spec; \
+	fi
+if [ -z "" ]; then \
+	echo "BUILDROOT=/tmp/tmppCjtqm/trinity.buildroot make -f /tmp/tmppCjtqm/trinity.spec.mk install" >> trinity.spec; \
+	else \
+	echo "BUILDROOT=/tmp/tmppCjtqm/trinity.buildroot make install" >> trinity.spec; \
+	fi
+echo -e "" >> trinity.spec
+install trinity.spec /tmp/tmppCjtqm/SPECS/trinity.spec
+rm -f /tmp/tmppCjtqm/.rpmmacros
+rpmbuild -bb /tmp/tmppCjtqm/SPECS/trinity.spec
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.wiKbSH
+-rwxr-xr-x root/root      4359 2016-09-29 16:58 trinity-1.0/_arch
+drwxr-xr-x                  Creating directory: trinity-1.0
+drwxr-xr-x root/root         0 2016-09-29 16:58 trinity-1.0/BUILD/
+-rwxr-xr-x root/root      3883 2016-09-29 16:58 trinity-1.0/_distribution
+-rw-r--r-- root/root      3682 2016-09-29 16:58 trinity-1.0/Makefile
+-rwxr-xr-x root/root      4012 2016-09-29 16:58 trinity-1.0/_os
+-rw-r--r-- root/root       698 2016-09-29 16:58 trinity-1.0/python.mk
+-rw-r--r-- root/root      4325 2016-09-29 16:58 trinity-1.0/rocks-version-common.mk
+-rw-r--r-- root/root     13172 2016-09-29 16:58 trinity-1.0/rocks-version.mk
+drwxr-xr-x root/root         0 2016-09-29 16:58 trinity-1.0/RPMS/
+-rw-r--r-- root/root      6310 2016-09-29 16:58 trinity-1.0/Rules-install.mk
+-rw-r--r-- root/root     15256 2016-09-29 16:58 trinity-1.0/Rules-linux-centos.mk
+-rw-r--r-- root/root      6390 2016-09-29 16:58 trinity-1.0/Rules-linux.mk
+-rw-r--r-- root/root     29686 2016-09-29 16:58 trinity-1.0/Rules.mk
+-rw-r--r-- root/root        32 2016-09-29 16:58 trinity-1.0/Rules-rcfiles.mk
+-rw-r--r-- root/root       382 2016-09-29 16:58 trinity-1.0/Rules-scripts.mk
+drwxr-xr-x root/root         0 2016-09-29 16:58 trinity-1.0/SOURCES/
+drwxr-xr-x root/root         0 2016-09-29 16:58 trinity-1.0/SPECS/
+drwxr-xr-x root/root         0 2016-09-29 16:58 trinity-1.0/SRPMS/
+-rw-r--r-- root/root       138 2016-09-29 16:58 trinity-1.0/version.mk
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.GICR3Z
+
+
+
+### build ###
+
+
+make[2]: Entering directory `/tmp/tmppCjtqm/BUILD/trinity-1.0'
+make ROOT=/tmp/tmppCjtqm/trinity.buildroot build
+make[3]: Entering directory `/tmp/tmppCjtqm/BUILD/trinity-1.0'
+make[3]: Nothing to be done for `build'.
+make[3]: Leaving directory `/tmp/tmppCjtqm/BUILD/trinity-1.0'
+make[2]: Leaving directory `/tmp/tmppCjtqm/BUILD/trinity-1.0'
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.R0d7ti
+
+
+
+### install ###
+
+
+make[2]: Entering directory `/tmp/tmppCjtqm/BUILD/trinity-1.0'
+make ROOT=/tmp/tmppCjtqm/trinity.buildroot install
+make[3]: Entering directory `/tmp/tmppCjtqm/BUILD/trinity-1.0'
+mkdir -p /tmp/tmppCjtqm/trinity.buildroot//opt
+cp -a /opt/trinity-2.2.0 /tmp/tmppCjtqm/trinity.buildroot//opt/
+make[3]: Leaving directory `/tmp/tmppCjtqm/BUILD/trinity-1.0'
+make[2]: Leaving directory `/tmp/tmppCjtqm/BUILD/trinity-1.0'
+
+
+RPM build errors:
+make[1]: Leaving directory `/tmp/tmppCjtqm'

@@ -1,0 +1,9 @@
+Warning: RPMDB altered outside of yum.
+** Found 3 pre-existing rpmdb problem(s), 'yum check' output follows:
+2000:jdk-1.7.0_80-fcs.x86_64 is a duplicate with 2000:jdk-1.7.0_51-fcs.x86_64
+libgfortran-4.4.7-17.el6.x86_64 is a duplicate with libgfortran-4.4.7-11.el6.i686
+reportlab-2.5-1.x86_64 has missing requires of libpython2.7.so.1.0()(64bit)
+error: open of libxshmfence-1.2-1.el6.x86_64.rpm failed: No such file or directory
+error: open of xorg-x11-server-common-1.17.4-9.el6.centos.x86_64.rpm failed: No such file or directory
+error: open of xorg-x11-server-Xvfb-1.17.4-9.el6.centos.x86_64.rpm failed: No such file or directory
+error: open of xorg-x11-xkb-utils-7.7-12.el6.x86_64.rpm failed: No such file or directory
