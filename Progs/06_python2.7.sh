@@ -38,7 +38,5 @@ rocks create package /opt/python2.7 python2.7
 
 $BASE_DIR/AuxScripts/addPackageExtend.sh $(ls python*.rpm)
 
-mv python*.rpm $RPM_CONTRIB_DIR
-
 cd /tmp
 rm -rf python_2

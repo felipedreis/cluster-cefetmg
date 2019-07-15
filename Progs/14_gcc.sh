@@ -24,5 +24,3 @@ make install
 rocks create package /opt/gcc gcc
 
 $BASE_DIR/AuxScripts/addPackExtend.sh $(ls gcc-*.rpm)
-
-cp gcc*.rpm $RPM_CONTRIB_DIR

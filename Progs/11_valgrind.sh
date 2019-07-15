@@ -21,7 +21,5 @@ rocks create package /opt/valgrind valgrind
 
 $BASE_DIR/AuxScripts/addPackExtend.sh $(ls valgrind-*.rpm)
 
-cp valgrind*.rpm $RPM_CONTRIB_DIR
-
 cd /tmp
 rm -rf valgrind/

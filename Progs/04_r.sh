@@ -27,7 +27,5 @@ rocks create package /opt/R R
 
 $BASE_DIR/AuxScripts/addPackExtend.sh $(ls R-*.rpm)
 
-mv R-*.rpm $RPM_CONTRIB_DIR
-
 cd /tmp
 rm -rf r

@@ -25,7 +25,5 @@ rocks create package /opt/octave octave
 
 $BASE_DIR/AuxScripts/addPackExtend.sh $(ls octave-*.rpm)
 
-mv octave*.rpm $RPM_CONTRIB_DIR
-
 cd /tmp
 rm -rf octave

@@ -10,7 +10,5 @@ for pack in $(ls *.rpm);do
 	$BASE_DIR/AuxScripts/addPackExtend.sh $pack
 done
 
-mv * $RPM_CONTRIB_DIR
-
 cd /tmp
 rm -rf xvfb

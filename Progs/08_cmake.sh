@@ -19,8 +19,6 @@ make install
 
 rocks create package /opt/cmake cmake
 
-cp *.rpm $RPM_CONTRIB_DIR
-
 $BASE_DIR/AuxScripts/addPackExtend.sh $(ls cmake-*.rpm)
 
 cd /tmp 

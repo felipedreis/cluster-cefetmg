@@ -40,7 +40,5 @@ rocks create package /opt/python3.4 python3.4
 
 $BASE_DIR/AuxScripts/addPackageExtend.sh $(ls python*.rpm)
 
-mv python*.rpm $RPM_CONTRIB_DIR
-
 cd /tmp
 rm -rf python_3

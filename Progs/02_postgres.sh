@@ -15,7 +15,5 @@ done
 
 yum localinstall *.rpm
 
-mv *.rpm $RPM_CONTRIB_DIR
-
 cd /tmp
 rm -rf postgresql
