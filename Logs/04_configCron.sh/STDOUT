@@ -1,3 +1,0 @@
-0 0 * * * /root/AdminScripts/userExpiryMail.sh
-0 0 * * * /root/AdminScripts/alertQuota.sh
-Scripts de cota e expiracao de conta habilitados no Cron

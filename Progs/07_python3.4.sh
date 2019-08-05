@@ -1,44 +1,92 @@
 #!/bin/bash
 
-mkdir -p /tmp/python_3
-cd /tmp/python_3
+major=3
+minor=7
+micro=4
 
-wget https://www.python.org/ftp/python/3.4.4/Python-3.4.4.tgz
+version=$major.$minor.$micro
+pkg_name=Python-$version
+mod_name=python$major.$minor
 
-if [ ! -f Python-3.4.4.tgz ];then
-	echo "Falha ao baixar o arquivo de instalação do Python-3"
+mkdir -p /tmp/python_$major
+cd /tmp/python_$major
+
+echo "Baixando Python $version"
+wget -nv https://www.python.org/ftp/python/$version/$pkg_name.tgz
+
+if [ ! -f $pkg_name.tgz ];then
+	echo "[ERRO] Falha ao baixar o arquivo de instalação do Python $major"
 	exit 1
 fi
+echo "[SUCESSO] Download do pacote $pkg_name efetuado com sucesso"
 
-tar -xf Python-3.4.4.tgz 
-cd Python-3.4.4/
+echo -e "\nDescompactando $pkg_name"
+tar -xf $pkg_name.tgz 
+cd $pkg_name/
 
-./configure --prefix=/opt/python3.4
-make -j8
-make install
+echo -e "\nConfigurando $pkg_name"
+./configure -q --prefix=/opt/$mod_name
 
-ln -s /opt/python3.4/bin/python3 /opt/python3.4/bin/python
+if [ $? != 0 ]; then
+  echo "[ERRO] Falha na configuração do Python $major"
+  exit 1
+fi
+echo "[SUCESSO] Python $major configurado com sucesso"
 
-#install pip for python3.4
-module load python3.4
+echo -e "\nInstalando Python $major"
+make -s -j8 >/dev/null
+make -s install >/dev/null
 
-wget https://bootstrap.pypa.io/get-pip.py
+if [ $? != 0 ]; then
+        echo "[ERRO] Falha ao instalar o Python $major"
+        exit 1
+fi
+echo "[SUCESSO] Python $major instalado com sucesso"
+
+ln -s /opt/$mod_name/bin/$mod_name /opt/$mod_name/bin/python
+
+#install pip for python
+module load $mod_name
+
+echo "Baixando pip"
+wget -nv https://bootstrap.pypa.io/get-pip.py
+
+if [ ! -f get-pip.py ];then
+        echo "[ERRO] Falha ao baixar o arquivo do pip"
+        exit 1
+fi
+echo "[SUCESSO] Download do arquivo do pip efetuado com sucesso"
+
+echo -e "\nInstalando pip e bibliotecas uteis do Python $major"
 python get-pip.py
 
-ln -s /opt/python3.4/bin/pip3 /opt/python3.4/bin/pip
+ln -s /opt/$mod_name/bin/pip$major /opt/$mod_name/bin/pip
 
-#installing useful libraries for python 3.4
-pip install numpy 
-pip install pandas
-pip install scipy
-pip install sklearn
-pip install biopython
+for package in numpy pandas scipy sklearn tensorflow biopython
+do
+        pip install -q --upgrade $package
+        if [ $? != 0 ]; then
+                echo "[ERRO] Falha na instalação da biblioteca $package"
+                exit 1
+        fi
+        echo "[SUCESSO] Biblioteca $package instalada com sucesso"
+done
 
 cd ..
-rm Python-3.4.4.tgz
-rocks create package /opt/python3.4 python3.4
+rm $pkg_name.tgz
 
-$BASE_DIR/AuxScripts/addPackageExtend.sh $(ls python*.rpm)
+echo -e "\nCriando pacote"
+rocks create package /opt/$mod_name Python release=1 version=$major.$minor.$micro 2>&1 | tail -n 8
+
+if [ ! -f $pkg_name-1.x86_64.rpm ];then
+        echo "[ERRO] Falha ao gerar o pacote rpm do Python $major"
+        exit 1
+fi
+
+$BASE_DIR/AuxScripts/addPackExtend.sh $(ls python*.rpm)
 
 cd /tmp
-rm -rf python_3
+rm -rf python_$major
+echo "[SUCESSO] Pacote $pkg_name instalado e movido com sucesso."
+
+exit 0

@@ -1,9 +1,0 @@
-Cannot open: http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-redhat94-9.4-1.noarch.rpm. Skipping.
-Error: Nothing to do
-sed: can't read /etc/yum.repos.d/pgdg-94-redhat.repo: No such file or directory
-
-
-Error getting repository data for pgdg94, repository not found
-ls: cannot access *.rpm: No such file or directory
-Cannot open: *.rpm. Skipping.
-mv: cannot stat `*.rpm': No such file or directory

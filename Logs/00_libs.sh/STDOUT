@@ -1,435 +1,0 @@
-Setting up Install Process
-Resolving Dependencies
---> Running transaction check
----> Package blas.i686 0:3.2.1-4.el6 will be installed
---> Processing Dependency: libgfortran.so.3(GFORTRAN_1.0) for package: blas-3.2.1-4.el6.i686
---> Processing Dependency: libgfortran.so.3 for package: blas-3.2.1-4.el6.i686
----> Package blas.x86_64 0:3.2.1-4.el6 will be installed
----> Package blas-devel.i686 0:3.2.1-4.el6 will be installed
----> Package blas-devel.x86_64 0:3.2.1-4.el6 will be installed
---> Running transaction check
----> Package libgfortran.x86_64 0:4.4.7-11.el6 will be updated
---> Processing Dependency: libgfortran = 4.4.7-11.el6 for package: gcc-gfortran-4.4.7-11.el6.x86_64
----> Package libgfortran.i686 0:4.4.7-17.el6 will be installed
----> Package libgfortran.x86_64 0:4.4.7-17.el6 will be an update
---> Running transaction check
----> Package gcc-gfortran.x86_64 0:4.4.7-11.el6 will be updated
----> Package gcc-gfortran.x86_64 0:4.4.7-17.el6 will be an update
---> Processing Dependency: gcc = 4.4.7-17.el6 for package: gcc-gfortran-4.4.7-17.el6.x86_64
---> Running transaction check
----> Package gcc.x86_64 0:4.4.7-11.el6 will be updated
---> Processing Dependency: gcc = 4.4.7-11.el6 for package: gcc-c++-4.4.7-11.el6.x86_64
----> Package gcc.x86_64 0:4.4.7-17.el6 will be an update
---> Processing Dependency: libgomp = 4.4.7-17.el6 for package: gcc-4.4.7-17.el6.x86_64
---> Processing Dependency: cpp = 4.4.7-17.el6 for package: gcc-4.4.7-17.el6.x86_64
---> Processing Dependency: libgcc >= 4.4.7-17.el6 for package: gcc-4.4.7-17.el6.x86_64
---> Running transaction check
----> Package cpp.x86_64 0:4.4.7-11.el6 will be updated
----> Package cpp.x86_64 0:4.4.7-17.el6 will be an update
----> Package gcc-c++.x86_64 0:4.4.7-11.el6 will be updated
----> Package gcc-c++.x86_64 0:4.4.7-17.el6 will be an update
---> Processing Dependency: libstdc++-devel = 4.4.7-17.el6 for package: gcc-c++-4.4.7-17.el6.x86_64
---> Processing Dependency: libstdc++ = 4.4.7-17.el6 for package: gcc-c++-4.4.7-17.el6.x86_64
----> Package libgcc.x86_64 0:4.4.7-11.el6 will be updated
----> Package libgcc.x86_64 0:4.4.7-17.el6 will be an update
----> Package libgomp.x86_64 0:4.4.7-11.el6 will be updated
----> Package libgomp.x86_64 0:4.4.7-17.el6 will be an update
---> Running transaction check
----> Package libstdc++.x86_64 0:4.4.7-11.el6 will be updated
----> Package libstdc++.x86_64 0:4.4.7-17.el6 will be an update
----> Package libstdc++-devel.x86_64 0:4.4.7-11.el6 will be updated
----> Package libstdc++-devel.x86_64 0:4.4.7-17.el6 will be an update
---> Finished Dependency Resolution
-
-Dependencies Resolved
-
-================================================================================
- Package                 Arch           Version              Repository    Size
-================================================================================
-Installing:
- blas                    i686           3.2.1-4.el6          base         305 k
- blas                    x86_64         3.2.1-4.el6          base         321 k
- blas-devel              i686           3.2.1-4.el6          base         113 k
- blas-devel              x86_64         3.2.1-4.el6          base         133 k
-Installing for dependencies:
- libgfortran             i686           4.4.7-17.el6         base         246 k
-Updating for dependencies:
- cpp                     x86_64         4.4.7-17.el6         base         3.7 M
- gcc                     x86_64         4.4.7-17.el6         base          10 M
- gcc-c++                 x86_64         4.4.7-17.el6         base         4.7 M
- gcc-gfortran            x86_64         4.4.7-17.el6         base         4.7 M
- libgcc                  x86_64         4.4.7-17.el6         base         103 k
- libgfortran             x86_64         4.4.7-17.el6         base         268 k
- libgomp                 x86_64         4.4.7-17.el6         base         134 k
- libstdc++               x86_64         4.4.7-17.el6         base         295 k
- libstdc++-devel         x86_64         4.4.7-17.el6         base         1.6 M
-
-Transaction Summary
-================================================================================
-Install       5 Package(s)
-Upgrade       9 Package(s)
-
-Total download size: 27 M
-Downloading Packages:
---------------------------------------------------------------------------------
-Total                                           4.3 MB/s |  27 MB     00:06     
-exiting because --downloadonly specified
-Setting up Install Process
-Resolving Dependencies
---> Running transaction check
----> Package atlas.i686 0:3.8.4-2.el6 will be installed
---> Processing Dependency: libgfortran.so.3(GFORTRAN_1.0) for package: atlas-3.8.4-2.el6.i686
---> Processing Dependency: libgfortran.so.3 for package: atlas-3.8.4-2.el6.i686
----> Package atlas.x86_64 0:3.8.4-2.el6 will be installed
---> Running transaction check
----> Package libgfortran.x86_64 0:4.4.7-11.el6 will be updated
---> Processing Dependency: libgfortran = 4.4.7-11.el6 for package: gcc-gfortran-4.4.7-11.el6.x86_64
----> Package libgfortran.i686 0:4.4.7-17.el6 will be installed
----> Package libgfortran.x86_64 0:4.4.7-17.el6 will be an update
---> Running transaction check
----> Package gcc-gfortran.x86_64 0:4.4.7-11.el6 will be updated
----> Package gcc-gfortran.x86_64 0:4.4.7-17.el6 will be an update
---> Processing Dependency: gcc = 4.4.7-17.el6 for package: gcc-gfortran-4.4.7-17.el6.x86_64
---> Running transaction check
----> Package gcc.x86_64 0:4.4.7-11.el6 will be updated
---> Processing Dependency: gcc = 4.4.7-11.el6 for package: gcc-c++-4.4.7-11.el6.x86_64
----> Package gcc.x86_64 0:4.4.7-17.el6 will be an update
---> Processing Dependency: libgomp = 4.4.7-17.el6 for package: gcc-4.4.7-17.el6.x86_64
---> Processing Dependency: cpp = 4.4.7-17.el6 for package: gcc-4.4.7-17.el6.x86_64
---> Processing Dependency: libgcc >= 4.4.7-17.el6 for package: gcc-4.4.7-17.el6.x86_64
---> Running transaction check
----> Package cpp.x86_64 0:4.4.7-11.el6 will be updated
----> Package cpp.x86_64 0:4.4.7-17.el6 will be an update
----> Package gcc-c++.x86_64 0:4.4.7-11.el6 will be updated
----> Package gcc-c++.x86_64 0:4.4.7-17.el6 will be an update
---> Processing Dependency: libstdc++-devel = 4.4.7-17.el6 for package: gcc-c++-4.4.7-17.el6.x86_64
---> Processing Dependency: libstdc++ = 4.4.7-17.el6 for package: gcc-c++-4.4.7-17.el6.x86_64
----> Package libgcc.x86_64 0:4.4.7-11.el6 will be updated
----> Package libgcc.x86_64 0:4.4.7-17.el6 will be an update
----> Package libgomp.x86_64 0:4.4.7-11.el6 will be updated
----> Package libgomp.x86_64 0:4.4.7-17.el6 will be an update
---> Running transaction check
----> Package libstdc++.x86_64 0:4.4.7-11.el6 will be updated
----> Package libstdc++.x86_64 0:4.4.7-17.el6 will be an update
----> Package libstdc++-devel.x86_64 0:4.4.7-11.el6 will be updated
----> Package libstdc++-devel.x86_64 0:4.4.7-17.el6 will be an update
---> Finished Dependency Resolution
-
-Dependencies Resolved
-
-================================================================================
- Package                 Arch           Version              Repository    Size
-================================================================================
-Installing:
- atlas                   i686           3.8.4-2.el6          base         2.4 M
- atlas                   x86_64         3.8.4-2.el6          base         2.8 M
-Installing for dependencies:
- libgfortran             i686           4.4.7-17.el6         base         246 k
-Updating for dependencies:
- cpp                     x86_64         4.4.7-17.el6         base         3.7 M
- gcc                     x86_64         4.4.7-17.el6         base          10 M
- gcc-c++                 x86_64         4.4.7-17.el6         base         4.7 M
- gcc-gfortran            x86_64         4.4.7-17.el6         base         4.7 M
- libgcc                  x86_64         4.4.7-17.el6         base         103 k
- libgfortran             x86_64         4.4.7-17.el6         base         268 k
- libgomp                 x86_64         4.4.7-17.el6         base         134 k
- libstdc++               x86_64         4.4.7-17.el6         base         295 k
- libstdc++-devel         x86_64         4.4.7-17.el6         base         1.6 M
-
-Transaction Summary
-================================================================================
-Install       3 Package(s)
-Upgrade       9 Package(s)
-
-Total size: 31 M
-Total download size: 5.3 M
-Downloading Packages:
---------------------------------------------------------------------------------
-Total                                           4.2 MB/s | 5.3 MB     00:01     
-exiting because --downloadonly specified
-Setting up Install Process
-Resolving Dependencies
---> Running transaction check
----> Package lapack.i686 0:3.2.1-4.el6 will be installed
---> Processing Dependency: libgfortran.so.3(GFORTRAN_1.0) for package: lapack-3.2.1-4.el6.i686
---> Processing Dependency: libgfortran.so.3 for package: lapack-3.2.1-4.el6.i686
---> Processing Dependency: libblas.so.3 for package: lapack-3.2.1-4.el6.i686
----> Package lapack.x86_64 0:3.2.1-4.el6 will be installed
---> Processing Dependency: libblas.so.3()(64bit) for package: lapack-3.2.1-4.el6.x86_64
----> Package lapack-devel.i686 0:3.2.1-4.el6 will be installed
---> Processing Dependency: blas-devel = 3.2.1-4.el6 for package: lapack-devel-3.2.1-4.el6.i686
----> Package lapack-devel.x86_64 0:3.2.1-4.el6 will be installed
---> Running transaction check
----> Package blas.i686 0:3.2.1-4.el6 will be installed
----> Package blas.x86_64 0:3.2.1-4.el6 will be installed
----> Package blas-devel.x86_64 0:3.2.1-4.el6 will be installed
----> Package libgfortran.x86_64 0:4.4.7-11.el6 will be updated
---> Processing Dependency: libgfortran = 4.4.7-11.el6 for package: gcc-gfortran-4.4.7-11.el6.x86_64
----> Package libgfortran.i686 0:4.4.7-17.el6 will be installed
----> Package libgfortran.x86_64 0:4.4.7-17.el6 will be an update
---> Running transaction check
----> Package gcc-gfortran.x86_64 0:4.4.7-11.el6 will be updated
----> Package gcc-gfortran.x86_64 0:4.4.7-17.el6 will be an update
---> Processing Dependency: gcc = 4.4.7-17.el6 for package: gcc-gfortran-4.4.7-17.el6.x86_64
---> Running transaction check
----> Package gcc.x86_64 0:4.4.7-11.el6 will be updated
---> Processing Dependency: gcc = 4.4.7-11.el6 for package: gcc-c++-4.4.7-11.el6.x86_64
----> Package gcc.x86_64 0:4.4.7-17.el6 will be an update
---> Processing Dependency: libgomp = 4.4.7-17.el6 for package: gcc-4.4.7-17.el6.x86_64
---> Processing Dependency: cpp = 4.4.7-17.el6 for package: gcc-4.4.7-17.el6.x86_64
---> Processing Dependency: libgcc >= 4.4.7-17.el6 for package: gcc-4.4.7-17.el6.x86_64
---> Running transaction check
----> Package cpp.x86_64 0:4.4.7-11.el6 will be updated
----> Package cpp.x86_64 0:4.4.7-17.el6 will be an update
----> Package gcc-c++.x86_64 0:4.4.7-11.el6 will be updated
----> Package gcc-c++.x86_64 0:4.4.7-17.el6 will be an update
---> Processing Dependency: libstdc++-devel = 4.4.7-17.el6 for package: gcc-c++-4.4.7-17.el6.x86_64
---> Processing Dependency: libstdc++ = 4.4.7-17.el6 for package: gcc-c++-4.4.7-17.el6.x86_64
----> Package libgcc.x86_64 0:4.4.7-11.el6 will be updated
----> Package libgcc.x86_64 0:4.4.7-17.el6 will be an update
----> Package libgomp.x86_64 0:4.4.7-11.el6 will be updated
----> Package libgomp.x86_64 0:4.4.7-17.el6 will be an update
---> Running transaction check
----> Package libstdc++.x86_64 0:4.4.7-11.el6 will be updated
----> Package libstdc++.x86_64 0:4.4.7-17.el6 will be an update
----> Package libstdc++-devel.x86_64 0:4.4.7-11.el6 will be updated
----> Package libstdc++-devel.x86_64 0:4.4.7-17.el6 will be an update
---> Finished Dependency Resolution
-
-Dependencies Resolved
-
-================================================================================
- Package                 Arch           Version              Repository    Size
-================================================================================
-Installing:
- lapack                  i686           3.2.1-4.el6          base         4.1 M
- lapack                  x86_64         3.2.1-4.el6          base         4.3 M
- lapack-devel            i686           3.2.1-4.el6          base         3.9 M
- lapack-devel            x86_64         3.2.1-4.el6          base         4.5 M
-Installing for dependencies:
- blas                    i686           3.2.1-4.el6          base         305 k
- blas                    x86_64         3.2.1-4.el6          base         321 k
- blas-devel              x86_64         3.2.1-4.el6          base         133 k
- libgfortran             i686           4.4.7-17.el6         base         246 k
-Updating for dependencies:
- cpp                     x86_64         4.4.7-17.el6         base         3.7 M
- gcc                     x86_64         4.4.7-17.el6         base          10 M
- gcc-c++                 x86_64         4.4.7-17.el6         base         4.7 M
- gcc-gfortran            x86_64         4.4.7-17.el6         base         4.7 M
- libgcc                  x86_64         4.4.7-17.el6         base         103 k
- libgfortran             x86_64         4.4.7-17.el6         base         268 k
- libgomp                 x86_64         4.4.7-17.el6         base         134 k
- libstdc++               x86_64         4.4.7-17.el6         base         295 k
- libstdc++-devel         x86_64         4.4.7-17.el6         base         1.6 M
-
-Transaction Summary
-================================================================================
-Install       8 Package(s)
-Upgrade       9 Package(s)
-
-Total size: 43 M
-Total download size: 17 M
-Downloading Packages:
---------------------------------------------------------------------------------
-Total                                           5.9 MB/s |  17 MB     00:02     
-exiting because --downloadonly specified
-Setting up Install Process
-Resolving Dependencies
---> Running transaction check
----> Package libgcc.i686 0:4.4.7-17.el6 will be installed
---> Finished Dependency Resolution
-Setting up Local Package Process
-Examining atlas-3.8.4-2.el6.i686.rpm: atlas-3.8.4-2.el6.i686
-Marking atlas-3.8.4-2.el6.i686.rpm to be installed
-Examining atlas-3.8.4-2.el6.x86_64.rpm: atlas-3.8.4-2.el6.x86_64
-Marking atlas-3.8.4-2.el6.x86_64.rpm to be installed
-Examining blas-3.2.1-4.el6.i686.rpm: blas-3.2.1-4.el6.i686
-Marking blas-3.2.1-4.el6.i686.rpm to be installed
-Examining blas-3.2.1-4.el6.x86_64.rpm: blas-3.2.1-4.el6.x86_64
-Marking blas-3.2.1-4.el6.x86_64.rpm to be installed
-Examining blas-devel-3.2.1-4.el6.i686.rpm: blas-devel-3.2.1-4.el6.i686
-Marking blas-devel-3.2.1-4.el6.i686.rpm to be installed
-Examining blas-devel-3.2.1-4.el6.x86_64.rpm: blas-devel-3.2.1-4.el6.x86_64
-Marking blas-devel-3.2.1-4.el6.x86_64.rpm to be installed
-Examining cpp-4.4.7-17.el6.x86_64.rpm: cpp-4.4.7-17.el6.x86_64
-Marking cpp-4.4.7-17.el6.x86_64.rpm as an update to cpp-4.4.7-11.el6.x86_64
-Examining gcc-4.4.7-17.el6.x86_64.rpm: gcc-4.4.7-17.el6.x86_64
-Marking gcc-4.4.7-17.el6.x86_64.rpm as an update to gcc-4.4.7-11.el6.x86_64
-Examining gcc-c++-4.4.7-17.el6.x86_64.rpm: gcc-c++-4.4.7-17.el6.x86_64
-Marking gcc-c++-4.4.7-17.el6.x86_64.rpm as an update to gcc-c++-4.4.7-11.el6.x86_64
-Examining gcc-gfortran-4.4.7-17.el6.x86_64.rpm: gcc-gfortran-4.4.7-17.el6.x86_64
-Marking gcc-gfortran-4.4.7-17.el6.x86_64.rpm as an update to gcc-gfortran-4.4.7-11.el6.x86_64
-Examining lapack-3.2.1-4.el6.i686.rpm: lapack-3.2.1-4.el6.i686
-Marking lapack-3.2.1-4.el6.i686.rpm to be installed
-Examining lapack-3.2.1-4.el6.x86_64.rpm: lapack-3.2.1-4.el6.x86_64
-Marking lapack-3.2.1-4.el6.x86_64.rpm to be installed
-Examining lapack-devel-3.2.1-4.el6.i686.rpm: lapack-devel-3.2.1-4.el6.i686
-Marking lapack-devel-3.2.1-4.el6.i686.rpm to be installed
-Examining lapack-devel-3.2.1-4.el6.x86_64.rpm: lapack-devel-3.2.1-4.el6.x86_64
-Marking lapack-devel-3.2.1-4.el6.x86_64.rpm to be installed
-Examining libgcc-4.4.7-17.el6.x86_64.rpm: libgcc-4.4.7-17.el6.x86_64
-Marking libgcc-4.4.7-17.el6.x86_64.rpm as an update to libgcc-4.4.7-11.el6.x86_64
-Examining libgfortran-4.4.7-17.el6.i686.rpm: libgfortran-4.4.7-17.el6.i686
-Marking libgfortran-4.4.7-17.el6.i686.rpm as an update to libgfortran-4.4.7-11.el6.x86_64
-Examining libgfortran-4.4.7-17.el6.x86_64.rpm: libgfortran-4.4.7-17.el6.x86_64
-Marking libgfortran-4.4.7-17.el6.x86_64.rpm as an update to libgfortran-4.4.7-11.el6.x86_64
-Examining libgomp-4.4.7-17.el6.x86_64.rpm: libgomp-4.4.7-17.el6.x86_64
-Marking libgomp-4.4.7-17.el6.x86_64.rpm as an update to libgomp-4.4.7-11.el6.x86_64
-Examining libstdc++-4.4.7-17.el6.x86_64.rpm: libstdc++-4.4.7-17.el6.x86_64
-Marking libstdc++-4.4.7-17.el6.x86_64.rpm as an update to libstdc++-4.4.7-11.el6.x86_64
-Examining libstdc++-devel-4.4.7-17.el6.x86_64.rpm: libstdc++-devel-4.4.7-17.el6.x86_64
-Marking libstdc++-devel-4.4.7-17.el6.x86_64.rpm as an update to libstdc++-devel-4.4.7-11.el6.x86_64
-Resolving Dependencies
---> Running transaction check
----> Package atlas.i686 0:3.8.4-2.el6 will be installed
---> Processing Dependency: libgfortran.so.3 for package: atlas-3.8.4-2.el6.i686
---> Processing Dependency: libgfortran.so.3(GFORTRAN_1.0) for package: atlas-3.8.4-2.el6.i686
----> Package atlas.x86_64 0:3.8.4-2.el6 will be installed
----> Package blas.i686 0:3.2.1-4.el6 will be installed
----> Package blas.x86_64 0:3.2.1-4.el6 will be installed
----> Package blas-devel.i686 0:3.2.1-4.el6 will be installed
----> Package blas-devel.x86_64 0:3.2.1-4.el6 will be installed
----> Package cpp.x86_64 0:4.4.7-11.el6 will be updated
----> Package cpp.x86_64 0:4.4.7-17.el6 will be an update
----> Package gcc.x86_64 0:4.4.7-11.el6 will be updated
----> Package gcc.x86_64 0:4.4.7-17.el6 will be an update
----> Package gcc-c++.x86_64 0:4.4.7-11.el6 will be updated
----> Package gcc-c++.x86_64 0:4.4.7-17.el6 will be an update
----> Package gcc-gfortran.x86_64 0:4.4.7-11.el6 will be updated
----> Package gcc-gfortran.x86_64 0:4.4.7-17.el6 will be an update
----> Package lapack.i686 0:3.2.1-4.el6 will be installed
----> Package lapack.x86_64 0:3.2.1-4.el6 will be installed
----> Package lapack-devel.i686 0:3.2.1-4.el6 will be installed
----> Package lapack-devel.x86_64 0:3.2.1-4.el6 will be installed
----> Package libgcc.x86_64 0:4.4.7-11.el6 will be updated
----> Package libgcc.x86_64 0:4.4.7-17.el6 will be an update
----> Package libgfortran.x86_64 0:4.4.7-11.el6 will be updated
----> Package libgfortran.x86_64 0:4.4.7-17.el6 will be an update
----> Package libgomp.x86_64 0:4.4.7-11.el6 will be updated
----> Package libgomp.x86_64 0:4.4.7-17.el6 will be an update
----> Package libstdc++.x86_64 0:4.4.7-11.el6 will be updated
----> Package libstdc++.x86_64 0:4.4.7-17.el6 will be an update
----> Package libstdc++-devel.x86_64 0:4.4.7-11.el6 will be updated
----> Package libstdc++-devel.x86_64 0:4.4.7-17.el6 will be an update
---> Running transaction check
----> Package libgfortran.i686 0:4.4.7-11.el6 will be installed
---> Finished Dependency Resolution
-
-Dependencies Resolved
-
-================================================================================
- Package         Arch   Version      Repository                            Size
-================================================================================
-Installing:
- atlas           i686   3.8.4-2.el6  /atlas-3.8.4-2.el6.i686              7.9 M
- atlas           x86_64 3.8.4-2.el6  /atlas-3.8.4-2.el6.x86_64             10 M
- blas            i686   3.2.1-4.el6  /blas-3.2.1-4.el6.i686               679 k
- blas            x86_64 3.2.1-4.el6  /blas-3.2.1-4.el6.x86_64             713 k
- blas-devel      i686   3.2.1-4.el6  /blas-devel-3.2.1-4.el6.i686         449 k
- blas-devel      x86_64 3.2.1-4.el6  /blas-devel-3.2.1-4.el6.x86_64       605 k
- lapack          i686   3.2.1-4.el6  /lapack-3.2.1-4.el6.i686             6.6 M
- lapack          x86_64 3.2.1-4.el6  /lapack-3.2.1-4.el6.x86_64           7.1 M
- lapack-devel    i686   3.2.1-4.el6  /lapack-devel-3.2.1-4.el6.i686        13 M
- lapack-devel    x86_64 3.2.1-4.el6  /lapack-devel-3.2.1-4.el6.x86_64      18 M
-Updating:
- cpp             x86_64 4.4.7-17.el6 /cpp-4.4.7-17.el6.x86_64             9.5 M
- gcc             x86_64 4.4.7-17.el6 /gcc-4.4.7-17.el6.x86_64              19 M
- gcc-c++         x86_64 4.4.7-17.el6 /gcc-c++-4.4.7-17.el6.x86_64          11 M
- gcc-gfortran    x86_64 4.4.7-17.el6 /gcc-gfortran-4.4.7-17.el6.x86_64     14 M
- libgcc          x86_64 4.4.7-17.el6 /libgcc-4.4.7-17.el6.x86_64          115 k
- libgfortran     x86_64 4.4.7-17.el6 /libgfortran-4.4.7-17.el6.x86_64     965 k
- libgomp         x86_64 4.4.7-17.el6 /libgomp-4.4.7-17.el6.x86_64         125 k
- libstdc++       x86_64 4.4.7-17.el6 /libstdc++-4.4.7-17.el6.x86_64       964 k
- libstdc++-devel x86_64 4.4.7-17.el6 /libstdc++-devel-4.4.7-17.el6.x86_64 9.3 M
-Installing for dependencies:
- libgfortran     i686   4.4.7-11.el6 Rocks-6.2                            245 k
-
-Transaction Summary
-================================================================================
-Install      11 Package(s)
-Upgrade       9 Package(s)
-
-Total size: 129 M
-Total download size: 245 k
-Downloading Packages:
-Running rpm_check_debug
-Running Transaction Test
-Transaction Test Succeeded
-Running Transaction
-  Updating   : libgfortran-4.4.7-17.el6.x86_64                             1/29 
-  Installing : blas-3.2.1-4.el6.x86_64                                     2/29 
-  Installing : lapack-3.2.1-4.el6.x86_64                                   3/29 
-  Updating   : libgcc-4.4.7-17.el6.x86_64                                  4/29 
-  Updating   : libstdc++-4.4.7-17.el6.x86_64                               5/29 
-  Updating   : libstdc++-devel-4.4.7-17.el6.x86_64                         6/29 
-  Updating   : libgomp-4.4.7-17.el6.x86_64                                 7/29 
-  Updating   : cpp-4.4.7-17.el6.x86_64                                     8/29 
-  Installing : libgfortran-4.4.7-11.el6.i686                               9/29 
-  Updating   : gcc-4.4.7-17.el6.x86_64                                    10/29 
-  Updating   : gcc-gfortran-4.4.7-17.el6.x86_64                           11/29 
-  Installing : blas-devel-3.2.1-4.el6.x86_64                              12/29 
-  Installing : lapack-devel-3.2.1-4.el6.x86_64                            13/29 
-  Updating   : gcc-c++-4.4.7-17.el6.x86_64                                14/29 
-  Installing : atlas-3.8.4-2.el6.x86_64                                   15/29 
-  Installing : atlas-3.8.4-2.el6.i686                                     16/29 
-  Installing : blas-3.2.1-4.el6.i686                                      17/29 
-  Installing : blas-devel-3.2.1-4.el6.i686                                18/29 
-  Installing : lapack-devel-3.2.1-4.el6.i686                              19/29 
-  Installing : lapack-3.2.1-4.el6.i686                                    20/29 
-  Cleanup    : gcc-c++-4.4.7-11.el6.x86_64                                21/29 
-  Cleanup    : gcc-gfortran-4.4.7-11.el6.x86_64                           22/29 
-  Cleanup    : libstdc++-devel-4.4.7-11.el6.x86_64                        23/29 
-  Cleanup    : gcc-4.4.7-11.el6.x86_64                                    24/29 
-  Cleanup    : libstdc++-4.4.7-11.el6.x86_64                              25/29 
-  Cleanup    : libgcc-4.4.7-11.el6.x86_64                                 26/29 
-  Cleanup    : cpp-4.4.7-11.el6.x86_64                                    27/29 
-  Cleanup    : libgomp-4.4.7-11.el6.x86_64                                28/29 
-  Cleanup    : libgfortran-4.4.7-11.el6.x86_64                            29/29 
-  Verifying  : libgfortran-4.4.7-17.el6.x86_64                             1/29 
-  Verifying  : lapack-devel-3.2.1-4.el6.i686                               2/29 
-  Verifying  : lapack-devel-3.2.1-4.el6.x86_64                             3/29 
-  Verifying  : gcc-c++-4.4.7-17.el6.x86_64                                 4/29 
-  Verifying  : libstdc++-4.4.7-17.el6.x86_64                               5/29 
-  Verifying  : cpp-4.4.7-17.el6.x86_64                                     6/29 
-  Verifying  : atlas-3.8.4-2.el6.i686                                      7/29 
-  Verifying  : blas-3.2.1-4.el6.i686                                       8/29 
-  Verifying  : lapack-3.2.1-4.el6.x86_64                                   9/29 
-  Verifying  : atlas-3.8.4-2.el6.x86_64                                   10/29 
-  Verifying  : blas-devel-3.2.1-4.el6.x86_64                              11/29 
-  Verifying  : libgcc-4.4.7-17.el6.x86_64                                 12/29 
-  Verifying  : libstdc++-devel-4.4.7-17.el6.x86_64                        13/29 
-  Verifying  : lapack-3.2.1-4.el6.i686                                    14/29 
-  Verifying  : blas-3.2.1-4.el6.x86_64                                    15/29 
-  Verifying  : libgfortran-4.4.7-11.el6.i686                              16/29 
-  Verifying  : gcc-gfortran-4.4.7-17.el6.x86_64                           17/29 
-  Verifying  : gcc-4.4.7-17.el6.x86_64                                    18/29 
-  Verifying  : blas-devel-3.2.1-4.el6.i686                                19/29 
-  Verifying  : libgomp-4.4.7-17.el6.x86_64                                20/29 
-  Verifying  : libstdc++-4.4.7-11.el6.x86_64                              21/29 
-  Verifying  : libgcc-4.4.7-11.el6.x86_64                                 22/29 
-  Verifying  : libstdc++-devel-4.4.7-11.el6.x86_64                        23/29 
-  Verifying  : libgomp-4.4.7-11.el6.x86_64                                24/29 
-  Verifying  : gcc-c++-4.4.7-11.el6.x86_64                                25/29 
-  Verifying  : gcc-4.4.7-11.el6.x86_64                                    26/29 
-  Verifying  : libgfortran-4.4.7-11.el6.x86_64                            27/29 
-  Verifying  : cpp-4.4.7-11.el6.x86_64                                    28/29 
-  Verifying  : gcc-gfortran-4.4.7-11.el6.x86_64                           29/29 
-
-Installed:
-  atlas.i686 0:3.8.4-2.el6              atlas.x86_64 0:3.8.4-2.el6             
-  blas.i686 0:3.2.1-4.el6               blas.x86_64 0:3.2.1-4.el6              
-  blas-devel.i686 0:3.2.1-4.el6         blas-devel.x86_64 0:3.2.1-4.el6        
-  lapack.i686 0:3.2.1-4.el6             lapack.x86_64 0:3.2.1-4.el6            
-  lapack-devel.i686 0:3.2.1-4.el6       lapack-devel.x86_64 0:3.2.1-4.el6      
-
-Dependency Installed:
-  libgfortran.i686 0:4.4.7-11.el6                                               
-
-Updated:
-  cpp.x86_64 0:4.4.7-17.el6                gcc.x86_64 0:4.4.7-17.el6            
-  gcc-c++.x86_64 0:4.4.7-17.el6            gcc-gfortran.x86_64 0:4.4.7-17.el6   
-  libgcc.x86_64 0:4.4.7-17.el6             libgfortran.x86_64 0:4.4.7-17.el6    
-  libgomp.x86_64 0:4.4.7-17.el6            libstdc++.x86_64 0:4.4.7-17.el6      
-  libstdc++-devel.x86_64 0:4.4.7-17.el6   
-
-Complete!
