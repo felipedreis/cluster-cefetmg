@@ -1,4 +1,7 @@
 #!/bin/bash
+log="${LOG_DIR}/${0%sh}log"
+touch $log && echo "" > $log
+source base.sh
 
 cd /tmp
 
@@ -9,53 +12,55 @@ micro=0
 version=$major.$minor.$micro
 pkg_name=gcc-$version
 
-echo "Baixando GCC $version"
+lecho "Baixando GCC $version"
 
-wget -nv http://mirrors.concertpass.com/gcc/releases/$pkg_name/$pkg_name.tar.gz
+wget http://mirrors.concertpass.com/gcc/releases/$pkg_name/$pkg_name.tar.gz &>> $log
 
-if [ ! -f $pkg_name.tar.gz ]; then
-	echo "[ERRO] Falha ao baixar o arquivo de instalação do GCC"
+if [ ! -f $pkg_name.tar.gz -o $? != 0 ]; then
+	eecho "Falha ao baixar o arquivo de instalação do GCC"
 	exit 1
 fi
-echo "[SUCESSO] Download do pacote $pkg_name efetuado com sucesso"
+secho "Download do pacote $pkg_name efetuado com sucesso"
 
-echo -e "\nDescompactando $pkg_name"
-tar -xzf $pkg_name.tar.gz
+lecho "\nDescompactando $pkg_name"
+tar -xzf $pkg_name.tar.gz &>> $log
 cd $pkg_name
 
-./contrib/download_prerequisites
+./contrib/download_prerequisites &>> $log
 cd ..
 mkdir build
 cd build
 
-echo -e "\nConfigurando $pkg_name"
-../$pkg_name/configure -q --prefix=/opt/gcc --enable-languages=c,c++,fortran,go --disable-multilib
+lecho "\nConfigurando $pkg_name"
+../$pkg_name/configure --prefix=/opt/gcc --enable-languages=c,c++,fortran,go --disable-multilib &>> $log
 
 if [ $? != 0 ]; then
-  echo "[ERRO] Falha na configuração do GCC"
-  exit 1
+	eecho "Falha na configuração do GCC"
+	exit 1
 fi
-echo "[SUCESSO] GCC configurado com sucesso"
+secho "GCC configurado com sucesso"
 
-echo -e "\nInstalando GCC"
-make -s -j8 >/dev/null
-make -s install >/dev/null
+lecho "\nInstalando GCC"
+make -j8 &>> $log
+make install &>> $log
 
 if [ $? != 0 ]; then
-        echo "[ERRO] Falha ao instalar o GCC"
+        eecho "Falha ao instalar o GCC"
         exit 1
 fi
-echo "[SUCESSO] GCC instalado com sucesso"
+secho "GCC instalado com sucesso"
 
-echo -e "\nCriando pacote"
-rocks create package /opt/gcc gcc release=1 version=$major.$minor.$micro 2>&1 | tail -n 8
+lecho "\nCriando pacote"
+rocks create package /opt/gcc gcc release=1 version=$major.$minor.$micro &>> $log
 
 if [ ! -f $pkg_name-1.x86_64.rpm ];then
-        echo "[ERRO] Falha ao gerar o pacote rpm do GCC"
+        eecho "Falha ao gerar o pacote rpm do GCC"
         exit 1
 fi
-echo "[SUCESSO] Pacote $pkg_name criado e movido com sucesso."
+secho "Pacote $pkg_name criado e movido com sucesso"
 
 $BASE_DIR/AuxScripts/addPackExtend.sh $(ls gcc-*.rpm)
+
+echo "Log completo em $log"
 
 exit 0

@@ -67,35 +67,7 @@ fi
 
 echo "Executando scripts do Frontend"
 #### Executa scripts do Frontend
-#for script in $(ls $FRONT_ONLY) ;do
-#	if [ -z $(cat $CHKP_FILE | grep $script) ];then
-#	
-#		if [ ! -d "$LOG_DIR/$script" ];then
-#			mkdir -p "$LOG_DIR/$script"
-#		else
-#			rm -rf $LOG_DIR/$script/*
-#		fi
-#		
-#		LOG="$LOG_DIR/$script"
-#		
-#		touch $LOG_DIR/$script/{ERR,STDOUT}
-#		
-#		echo -e "\nExec script : $FRONT_ONLY/$script" 
-#		sh $FRONT_ONLY/$script 2>> "$LOG/ERR" >> "$LOG/STDOUT"
-#		
-#		if [ $? -ne "0" ];then
-#			echo "Falha ao executar o script $script"
-#			exit 1
-#		else
-#			echo $script >> "$CHKP_FILE"
-#			echo "Instalacao do -- $script -- concluida com sucesso"
-#		fi
-#	fi
-#done
-
-echo "Executando scripts de instalação de programas"
-#### Executa scripts
-for script in $(ls $SCRIPT_DIR) ;do
+for script in $(ls $FRONT_ONLY) ;do
 	if [ -z $(cat $CHKP_FILE | grep $script) ];then
 	
 		if [ ! -d "$LOG_DIR/$script" ];then
@@ -108,8 +80,8 @@ for script in $(ls $SCRIPT_DIR) ;do
 		
 		touch $LOG_DIR/$script/{ERR,STDOUT}
 		
-		echo -e "\nExec script : $SCRIPT_DIR/$script" 
-		sh $SCRIPT_DIR/$script 2>> "$LOG/ERR" >> "$LOG/STDOUT"
+		echo -e "\nExec script : $FRONT_ONLY/$script" 
+		sh $FRONT_ONLY/$script 2>> "$LOG/ERR" >> "$LOG/STDOUT"
 		
 		if [ $? -ne "0" ];then
 			echo "Falha ao executar o script $script"
@@ -120,7 +92,35 @@ for script in $(ls $SCRIPT_DIR) ;do
 		fi
 	fi
 done
-exit 0
+
+echo "Executando scripts de instalação de programas"
+#### Executa scripts
+#for script in $(ls $SCRIPT_DIR) ;do
+#	if [ -z $(cat $CHKP_FILE | grep $script) ];then
+#	
+#		if [ ! -d "$LOG_DIR/$script" ];then
+#			mkdir -p "$LOG_DIR/$script"
+#		else
+#			rm -rf $LOG_DIR/$script/*
+#		fi
+#		
+#		LOG="$LOG_DIR/$script"
+#		
+#		touch $LOG_DIR/$script/{ERR,STDOUT}
+#		
+#		echo -e "\nExec script : $SCRIPT_DIR/$script" 
+#		sh $SCRIPT_DIR/$script 2>> "$LOG/ERR" >> "$LOG/STDOUT"
+#		
+#		if [ $? -ne "0" ];then
+#			echo "Falha ao executar o script $script"
+#			exit 1
+#		else
+#			echo $script >> "$CHKP_FILE"
+#			echo "Instalacao do -- $script -- concluida com sucesso"
+#		fi
+#	fi
+#done
+#exit 0
 cd /export/rocks/install
 rocks create distro
 

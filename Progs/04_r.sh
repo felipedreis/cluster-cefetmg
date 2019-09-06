@@ -1,4 +1,7 @@
 #!/bin/bash
+log="${LOG_DIR}/${0%sh}log"
+touch $log && echo "" > $log
+source base.sh
 
 mkdir -p /tmp/r
 cd /tmp/r
@@ -12,55 +15,57 @@ pkg_name=R-$version
 
 #download the latest stable version of R
 
-echo "Baixando R $version"
-wget -nv https://cloud.r-project.org/src/base/R-$major/$pkg_name.tar.gz
+lecho "Baixando R $version"
+wget https://cloud.r-project.org/src/base/R-$major/$pkg_name.tar.gz &>> $log
 
-if [ ! -f $pkg_name.tar.gz ];then
-	echo "[ERRO] Falha ao baixar o arquivo de instalação do R"
+if [ ! -f $pkg_name.tar.gz -o $? != 0 ];then
+	eecho "Falha ao baixar o arquivo de instalação do R"
 	exit 1
 fi
-echo "[SUCESSO] Download do pacote $pkg_name efetuado com sucesso"
+secho "Download do pacote $pkg_name efetuado com sucesso"
 
-echo -e "\nDescompactando $pkg_name"
-tar -xf $pkg_name.tar.gz
+lecho "\nDescompactando $pkg_name"
+tar -xf $pkg_name.tar.gz &>> $log
 
 # configure and install R in /opt/R path
-echo -e "\nConfigurando $pkg_name"
+lecho "\nConfigurando $pkg_name"
 cd ${pkg_name%.tar.gz}
-./configure -q --prefix=/opt/R --without-x
+./configure --prefix=/opt/R --without-x &>> $log
 
 if [ $? != 0 ]; then
-  echo "[ERRO] Falha na configuração do R"
+  eecho "Falha na configuração do R"
   exit 1
 fi
-echo "[SUCESSO] R configurado com sucesso"
+secho "R configurado com sucesso"
 
-echo -e "\nInstalando R"
-make -s -j8 >/dev/null
-make -s install >/dev/null
+lecho "\nInstalando R"
+make -j8 &>> $log
+make install &>> $log
 
 if [ $? != 0 ]; then
-        echo "[ERRO] Falha ao instalar o R"
+        eecho "Falha ao instalar o R"
         exit 1
 fi
-echo "[SUCESSO] R instalado com sucesso"
+secho "R instalado com sucesso"
 
 #create package and copy it to rocks contrib dir
 cd .. 
 rm $pkg_name.tar.gz
 
-echo -e "\nCriando pacote"
-rocks create package /opt/R R release=1 version=$major.$minor.$micro 2>&1 | tail -n 8
+lecho "\nCriando pacote"
+rocks create package /opt/R R release=1 version=$major.$minor.$micro &>> $log
 
 if [ ! -f $pkg_name-1.x86_64.rpm ];then
-        echo "[ERRO] Falha ao gerar o pacote rpm do R"
+        eecho "Falha ao gerar o pacote rpm do R"
         exit 1
 fi
 
 $BASE_DIR/AuxScripts/addPackExtend.sh $(ls R-*.rpm)
-echo "[SUCESSO] Pacote $pkg_name instalado e movido com sucesso."
+secho "Pacote $pkg_name criado e movido com sucesso."
 
 cd /tmp
 rm -rf r
+
+echo "Log completo em $log"
 
 exit 0

@@ -1,4 +1,7 @@
 #!/bin/bash
+log="${LOG_DIR}/${0%sh}log"
+touch $log && echo "" > $log
+source base.sh
 
 mkdir -p /tmp/mpich
 cd /tmp/mpich
@@ -10,53 +13,55 @@ micro=1
 version=$major.$minor.$micro
 pkg_name=mpich-$version
 
-echo "Baixando MPICH"
-wget -nv http://www.mpich.org/static/downloads/$version/mpich-$version.tar.gz
+lecho "Baixando MPICH"
+wget http://www.mpich.org/static/downloads/$version/mpich-$version.tar.gz &>> $log
 
-if [ ! -f $pkg_name.tar.gz ];then
-	echo "[ERRO] Falha ao baixar o arquivo de instalação do MPICH"
+if [ ! -f $pkg_name.tar.gz -o $? != 0 ];then
+	eecho "Falha ao baixar o arquivo de instalação do MPICH"
 	exit 1
 fi
-echo "[SUCESSO] Download do pacote $pkg_name efetuado com sucesso"
+secho "Download do pacote $pkg_name efetuado com sucesso"
 
-echo -e "\nDescompactando $pkg_name"
-tar -xzf $pkg_name.tar.gz
+lecho "\nDescompactando $pkg_name"
+tar -xzf $pkg_name.tar.gz &>> $log
 cd $pkg_name
 
-echo -e "\nConfigurando $pkg_name"
-./configure -q --prefix=/opt/mpich
+lecho "\nConfigurando $pkg_name"
+./configure --prefix=/opt/mpich &>> $log
 
 if [ $? != 0 ]; then
-  echo "[ERRO] Falha na configuração do MPICH"
+  eecho "Falha na configuração do MPICH"
   exit 1
 fi
-echo "[SUCESSO] MPICH configurado com sucesso"
+secho "MPICH configurado com sucesso"
 
-echo -e "\nInstalando MPICH"
-make -s -j8 >/dev/null
-make -s install >/dev/null
+lecho "\nInstalando MPICH"
+make -j8 &>> $log
+make install &>> $log
 
 if [ $? != 0 ]; then
-        echo "[ERRO] Falha ao instalar o MPICH"
+        eecho "Falha ao instalar o MPICH"
         exit 1
 fi
-echo "[SUCESSO] MPICH instalado com sucesso"
+secho "MPICH instalado com sucesso"
 
-echo -e "\nCriando pacote"
+lecho "\nCriando pacote"
 cd ..
 
-rocks create package /opt/mpich mpich release=1 version=$major.$minor.$micro 2>&1 | tail -n 8
+rocks create package /opt/mpich mpich release=1 version=$major.$minor.$micro &>> $log
 
 if [ ! -f $pkg_name-1.x86_64.rpm ];then
-        echo "[ERRO] Falha ao gerar o pacote rpm do MPICH"
+        eecho "Falha ao gerar o pacote rpm do MPICH"
         exit 1
 fi
 
 $BASE_DIR/AuxScripts/addPackExtend.sh $(ls mpich*.rpm)
-echo "[SUCESSO] Pacote $pkg_name criado e movido com sucesso."
+secho "Pacote $pkg_name criado e movido com sucesso"
 
 cd /tmp
 rm -rf mpich
+
+echo "Log completo em $log"
 
 exit 0
 

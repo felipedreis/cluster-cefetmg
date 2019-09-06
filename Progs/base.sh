@@ -13,7 +13,7 @@ lecho() {
 downloader() {
 	for package in $2
         do
-          	yumdownloader --enablerepo="$1" --downloaddir=. $package >> $log
+          	yumdownloader --enablerepo="$1" --downloaddir=. $package &>> $log
                 if [ $? != 0 ]; then
                         eecho "Falha no download do pacote $package"
                         exit 1
@@ -21,4 +21,3 @@ downloader() {
         done
 	secho "Download com sucesso do(s) pacote(s) $2"
 }
-

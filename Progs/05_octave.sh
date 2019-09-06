@@ -1,4 +1,7 @@
 #!/bin/bash
+log="${LOG_DIR}/${0%sh}log"
+touch $log && echo "" > $log
+source base.sh
 
 mkdir -p /tmp/octave
 cd /tmp/octave
@@ -9,55 +12,57 @@ micro=0
 
 version=$major.$minor.$micro
 pkg_name=octave-$version
-echo "Baixando Octave $version"
-wget -nv http://ftp.gnu.org/gnu/octave/$pkg_name.tar.gz
+lecho "Baixando Octave $version"
+wget http://ftp.gnu.org/gnu/octave/$pkg_name.tar.gz &>> $log
 
-if [ ! -f $pkg_name.tar.gz ];then
-	echo "[ERRO] Falha ao baixar o arquivo de instalação do OCTAVE"
+if [ ! -f $pkg_name.tar.gz -o $? != 0 ];then
+	eecho "Falha ao baixar o arquivo de instalação do OCTAVE"
 	exit 1
 fi
-echo "[SUCESSO] Download do pacote $pkg_name efetuado com sucesso"
+secho "Download do pacote $pkg_name efetuado com sucesso"
 
-echo -e "\nDescompactando $pkg_name"
-tar -xzf $pkg_name.tar.gz
+lecho "\nDescompactando $pkg_name"
+tar -xzf $pkg_name.tar.gz &>> $log
 
 # Compila o octave. No passo de config ele checa a existencia de libblas
 # e liblapack, ambas devem existir no /usr/lib com o nome libblas.so e liblapack.so
-echo -e "\nConfigurando $pkg_name"
+lecho "\nConfigurando $pkg_name"
 cd $pkg_name
-./configure -q --prefix=/opt/octave 
+./configure --prefix=/opt/octave &>> $log
 
 if [ $? != 0 ]; then
-  echo "[ERRO] Falha na configuração do Octave"
+  eecho "Falha na configuração do Octave"
   exit 1
 fi
-echo "[SUCESSO] Octave configurado com sucesso"
+secho "Octave configurado com sucesso"
 
-echo -e "\nInstalando R"
-make -s -j8 >/dev/null
-make -s install >/dev/null
+lecho "\nInstalando Octave"
+make -j8 &>> $log
+make install &>> $log
 
 if [ $? != 0 ]; then
-        echo "[ERRO] Falha ao instalar o Octave"
+        eecho "Falha ao instalar o Octave"
         exit 1
 fi
-echo "[SUCESSO] Octave instalado com sucesso"
+secho "Octave instalado com sucesso"
 
 cd ..
 rm $pkg_name.tar.gz
 
-echo -e "\nCriando pacote"
-rocks create package /opt/octave octave release=1 version=$major.$minor.$micro 2>&1 | tail -n 8
+lecho -e "\nCriando pacote"
+rocks create package /opt/octave octave release=1 version=$major.$minor.$micro &>> $log
 
 if [ ! -f $pkg_name-1.x86_64.rpm ];then
-        echo "[ERRO] Falha ao gerar o pacote rpm do Octave"
+        eecho "Falha ao gerar o pacote rpm do Octave"
         exit 1
 fi
 
 $BASE_DIR/AuxScripts/addPackExtend.sh $(ls octave-*.rpm)
-echo "[SUCESSO] Pacote $pkg_name instalado e movido com sucesso."
+secho "Pacote $pkg_name criado e movido com sucesso"
 
 cd /tmp
 rm -rf octave
+
+echo "Log completo em $log"
 
 exit 0
