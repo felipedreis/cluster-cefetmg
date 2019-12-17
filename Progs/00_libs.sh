@@ -11,7 +11,7 @@ lecho "Baixando bibliotecas"
 downloader "base, epel" "blas-devel.i686 blas-devel.x86_64 blas.i686 blas.x86_64";
 downloader "base, epel" "atlas.i686 atlas.x86_64";
 downloader "base, epel" "lapack.i686 lapack.x86_64 lapack-devel.x86_64 lapack-devel.i686";
-downloader "base, epel" "libgcc.i686";
+downloader "base, epel" "libgcc.i686 libgcc.x86_64";
 downloader "base, epel" "readline.x86_64 readline-devel.x86_64";
 downloader "base, epel" "texinfo.x86_64";
 

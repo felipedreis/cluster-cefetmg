@@ -1,7 +1,7 @@
 #!/bin/bash
 #Corrige o erro do comando Rocks sync host sharedkey
 
-cd /opt/rocks/lib/python2.6/site-packages/rocks/commands/sync/host/sharedkey
+cd /opt/rocks/lib/python2.7/site-packages/rocks/commands/sync/host/sharedkey
 if [ $? -ne 0 ];then
 	echo "Nao foi possivel entrar no diretório /opt/rocks/lib/python2.6/site-packages/rocks/commands/sync/host/sharedkey" &>2;
 	exit 1;
