@@ -9,8 +9,8 @@ cd /root/Downloads
 
 echo "Iniciando instalacao do SLURM"
 
-if [ ! -f slurm-6.2.0-160502.x86_64.disk1.iso ];then
-	wget -c https://sourceforge.net/projects/slurm-roll/files/release-6.2-16.05.02/slurm-6.2.0-160502.x86_64.disk1.iso/download
+if [ ! -f slurm-7.0.0.220-19.05.02.01.00.x86_64.disk1.iso ];then
+	wget -c https://sourceforge.net/projects/slurm-roll/files/release-7.0.0-19.05.02/slurm-7.0.0.220-19.05.02.01.00.x86_64.disk1.iso/download
 	#wget -o logWget -c http://sourceforge.net/projects/slurm-roll/files/release-6.1.1-14.03.6/slurm-6.1.1-81.x86_64.disk1.iso/download
 	if [ $? -ne 0 ];then
 		echo "Ocorreu um erro no download do roll do Slurm" &>2;
@@ -19,7 +19,7 @@ if [ ! -f slurm-6.2.0-160502.x86_64.disk1.iso ];then
 	fi
 	rm -f logWget
 
-	mv -v download slurm-6.2.0-160502.x86_64.disk1.iso
+	mv -v download slurm-7.0.0.220-19.05.02.01.00.x86_64.disk1.iso
 
 	if [ $? -ne 0 ];then
 		echo "Falha ao renomear o arquivo baixado" &>2;

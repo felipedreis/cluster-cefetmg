@@ -5,7 +5,8 @@
 # 18/06/2015
 # Autores:	Juan Lopes Ferreira, 
 #	    	Gilmar Pereira de Acantara
-#			Felipe Duarte dos Reis
+#		Felipe Duarte dos Reis
+#		Vitor Gomes Soares Lins Peixoto
 #
 ##########################################################################
 
@@ -95,32 +96,32 @@ done
 
 echo "Executando scripts de instalação de programas"
 #### Executa scripts
-#for script in $(ls $SCRIPT_DIR) ;do
-#	if [ -z $(cat $CHKP_FILE | grep $script) ];then
-#	
-#		if [ ! -d "$LOG_DIR/$script" ];then
-#			mkdir -p "$LOG_DIR/$script"
-#		else
-#			rm -rf $LOG_DIR/$script/*
-#		fi
-#		
-#		LOG="$LOG_DIR/$script"
-#		
-#		touch $LOG_DIR/$script/{ERR,STDOUT}
-#		
-#		echo -e "\nExec script : $SCRIPT_DIR/$script" 
-#		sh $SCRIPT_DIR/$script 2>> "$LOG/ERR" >> "$LOG/STDOUT"
-#		
-#		if [ $? -ne "0" ];then
-#			echo "Falha ao executar o script $script"
-#			exit 1
-#		else
-#			echo $script >> "$CHKP_FILE"
-#			echo "Instalacao do -- $script -- concluida com sucesso"
-#		fi
-#	fi
-#done
-#exit 0
+for script in $(ls $SCRIPT_DIR) ;do
+	if [ -z $(cat $CHKP_FILE | grep $script) ];then
+	
+		if [ ! -d "$LOG_DIR/$script" ];then
+			mkdir -p "$LOG_DIR/$script"
+		else
+			rm -rf $LOG_DIR/$script/*
+		fi
+		
+		LOG="$LOG_DIR/$script"
+		
+		touch $LOG_DIR/$script/{ERR,STDOUT}
+		
+		echo -e "\nExec script : $SCRIPT_DIR/$script" 
+		sh $SCRIPT_DIR/$script 2>> "$LOG/ERR" >> "$LOG/STDOUT"
+		
+		if [ $? -ne "0" ];then
+			echo "Falha ao executar o script $script"
+			exit 1
+		else
+			echo $script >> "$CHKP_FILE"
+			echo "Instalacao do -- $script -- concluida com sucesso"
+		fi
+	fi
+done
+
 cd /export/rocks/install
 rocks create distro
 
@@ -138,5 +139,3 @@ if [ $reb == 'Y' ]; then
 else
 	echo -e "Opcao (!=Y) selecionada!\nNao esqueca de reiniciar o Cluster..."
 fi
-
-
