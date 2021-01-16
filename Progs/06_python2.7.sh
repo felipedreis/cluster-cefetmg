@@ -1,7 +1,8 @@
 #!/bin/bash
-log="${LOG_DIR}/${0%sh}log"
+log="${LOG_DIR}/06_python2.7.log"
 touch $log && echo "" > $log
-source base.sh
+
+source $BASE_DIR/base.sh
 
 mkdir -p /tmp/python_2
 cd /tmp/python_2
@@ -60,7 +61,7 @@ secho "Download do arquivo do pip efetuado com sucesso"
 lecho "\nInstalando pip e bibliotecas uteis do Python $major"
 python get-pip.py &>> $log
 
-for package in numpy pandas scipy sklearn tensorflow biopython
+for package in virtualenv numpy pandas scipy sklearn biopython
 do
 	pip install --upgrade $package &>> $log
 	if [ $? != 0 ]; then

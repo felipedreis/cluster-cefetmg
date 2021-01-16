@@ -1,14 +1,15 @@
 #!/bin/bash
-log="${LOG_DIR}/${0%sh}log"
+log="${LOG_DIR}/01_java.log"
 touch $log && echo "" > $log
-source base.sh
+
+source $BASE_DIR/base.sh
 
 mkdir -p /tmp/java
 cd /tmp/java
 
 mkdir -p /opt/java
 
-major=12
+major=13
 minor=0
 micro=2
 
@@ -19,7 +20,7 @@ version=$major.$minor.$micro
 pkg_name=jdk-${version}_linux-x64_bin.rpm
 
 lecho "Baixando $pkg_name"
-wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/12.0.2+10/e482c34c86bd4bf8b56c0b35558996b9/jdk-12.0.2_linux-x64_bin.rpm &>> $log
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/13.0.2+8/d4173c853231432d94f001e99d882ca7/jdk-13.0.2_linux-x64_bin.rpm
 
 if [ ! -f $pkg_name -o $? != 0 ];then
 	eecho "Falha ao baixar o arquivo de instalação do JDK$major 64 bits"

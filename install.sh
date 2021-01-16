@@ -22,6 +22,7 @@ SCRIPT_DIR="$BASEDIR/Progs"
 FRONT_ONLY="$BASEDIR/FrontendOnly"
 CHKP_FILE="$BASEDIR/checkpoint"
 
+export LOG_DIR=$LOG_DIR
 export BASE_DIR=$BASEDIR
 . env.config
 
@@ -98,7 +99,6 @@ echo "Executando scripts de instalação de programas"
 #### Executa scripts
 for script in $(ls $SCRIPT_DIR) ;do
 	if [ -z $(cat $CHKP_FILE | grep $script) ];then
-	
 		if [ ! -d "$LOG_DIR/$script" ];then
 			mkdir -p "$LOG_DIR/$script"
 		else
@@ -110,7 +110,7 @@ for script in $(ls $SCRIPT_DIR) ;do
 		touch $LOG_DIR/$script/{ERR,STDOUT}
 		
 		echo -e "\nExec script : $SCRIPT_DIR/$script" 
-		sh $SCRIPT_DIR/$script 2>> "$LOG/ERR" >> "$LOG/STDOUT"
+		sh $SCRIPT_DIR/$script #2>> "$LOG/ERR" >> "$LOG/STDOUT"
 		
 		if [ $? -ne "0" ];then
 			echo "Falha ao executar o script $script"

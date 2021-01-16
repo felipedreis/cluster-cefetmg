@@ -1,7 +1,8 @@
 #!/bin/bash
-log="${LOG_DIR}/${0%sh}log"
+log="${LOG_DIR}/02_postgres.log"
 touch $log && echo "" > $log
-source base.sh
+
+source $BASE_DIR/base.sh
 
 mkdir -p /tmp/postgresql
 cd /tmp/postgresql
